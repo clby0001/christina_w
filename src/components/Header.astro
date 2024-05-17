@@ -1,7 +1,8 @@
 ---
-import '../css/style.css' 
+import "../css/style.css";
 ---
-<nav class="">
+
+<nav class="header">
   <div class="logo">
     <a href="/">CW</a>
   </div>
@@ -21,12 +22,13 @@ import '../css/style.css'
   </div>
 </nav>
 <style>
-      nav {
+  nav {
     display: flex;
     justify-content: space-between;
+    padding: 10px 20px;
     align-items: center;
     width: 100%;
-    /* position: absolute; */
+    position: absolute;
     z-index: 50;
   }
 
@@ -34,10 +36,10 @@ import '../css/style.css'
     position: absolute;
   }
   .logo a {
-  text-decoration: none;
-  font-family: "Karla", sans-serif;
-  font-size: 30px;
-  color: black;
+    text-decoration: none;
+    font-family: "Karla", sans-serif;
+    font-size: 30px;
+    color: black;
   }
 
   .logo {
@@ -96,7 +98,6 @@ import '../css/style.css'
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
-    margin-right: 2rem; /* Justering fra dit oprindelige design */
   }
 
   .burger .line {
@@ -105,7 +106,6 @@ import '../css/style.css'
     background-color: #000000; /* Dit valgte farve for burgermenuen */
     transition: all 0.2s linear;
   }
-
 </style>
 
 <script>
