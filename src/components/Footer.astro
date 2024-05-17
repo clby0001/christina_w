@@ -3,24 +3,31 @@ import "../css/style.css";
 ---
 
 <footer>
-  <div class="footer-section">
-    <h3>Contact me:</h3>
-    <p>Telefon: +45 20 20 20 20</p>
-    <p>Email: christina@winslow.com</p>
-  </div>
-  <div class="footer-section">
-    <h3>Help</h3>
-    <p>Terms & conditions</p>
-    <p>Privacy policy</p>
-    <p>Shipping and returns</p>
-  </div>
-  <div class="social-icons">
-    <a href="https://www.instagram.com/christinawinslov/" target="_blank">
-      <img src="public/billeder/icons8-instagram-2.svg" alt="Instagram" />
-    </a>
-    <a href="https://www.facebook.com/din-facebook-side" target="_blank">
-      <img src="public/billeder/icons8-facebook-2.svg" alt="Facebook" />
-    </a>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3>Contact me</h3>
+      <p>Telefon: +45 20 20 20 20</p>
+      <p>Email: christina@winslow.com</p>
+    </div>
+    <div class="footer-section">
+      <h3>Help</h3>
+      <p>Terms & conditions</p>
+      <p>Privacy policy</p>
+      <p>Shipping and returns</p>
+    </div>
+    <div class="footer-section logo-social">
+      <div class="logo-footer">
+        <img src="/public/billeder/logofooter.png" alt="logo" />
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/christinawinslov/" target="_blank">
+          <img src="public/billeder/icons8-instagram-2.svg" alt="Instagram" />
+        </a>
+        <a href="https://www.facebook.com/din-facebook-side" target="_blank">
+          <img src="public/billeder/icons8-facebook-3.svg" alt="Facebook" />
+        </a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -32,25 +39,60 @@ import "../css/style.css";
     background-color: #e7d9d9;
     padding: 20px;
     display: flex;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  .footer-container {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: auto;
+    width: 100%;
   }
 
   .footer-section {
     flex-basis: 100%;
-    text-align: center;
-    margin-bottom: auto;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+  }
+
+  .logo-footer {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  .logo-footer img {
+    width: 80px;
+    height: auto;
   }
 
   @media (min-width: 768px) {
     .footer-section {
-      flex-basis: calc(50% - 20px);
+      flex-basis: calc(33.33% - 20px);
+      margin-bottom: 0;
+    }
+
+    .logo-social {
+      flex-basis: 33.33%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .logo-footer {
+      order: 1;
+      text-align: right;
     }
 
     .social-icons {
-      order: 1; /* Flyt social-icons til venstre */
-      text-align: left;
+      order: 2;
+      justify-content: right;
     }
   }
 
@@ -59,14 +101,27 @@ import "../css/style.css";
       flex-basis: calc(33.33% - 20px);
     }
 
-    .social-icons {
-      order: 2; /* Behold social-icons til højre */
+    .logo-social {
+      flex-basis: 33.33%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .logo-footer {
+      order: 1;
       text-align: right;
+    }
+
+    .social-icons {
+      order: 2;
+      justify-content: right;
     }
   }
 
   footer .footer-section h3 {
     color: black;
+    margin-bottom: 15px;
   }
 
   footer .social-icons img {
@@ -77,5 +132,6 @@ import "../css/style.css";
 
   p {
     font-size: 11px;
+    margin-bottom: 15px;
   }
 </style>
