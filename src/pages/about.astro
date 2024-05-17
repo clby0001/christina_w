@@ -6,7 +6,66 @@ import Footer from '../components/Footer.astro';
 
 <Layout >
 
-    <h1>hej</h1>
+    <div class="sektion_body">
+    <h1>CHRISTINA WINSLØW</h1>
     
+<p>In my art, I focus on conveying all the universal facets of life. I challenge conventional materials with my working methods, often blending delicate drawn expressions with paint and spray. Thus, the works exude an atmosphere of dreamy infinity. An aesthetic union and a very special sensuality.
+
+I think a lot about sustainability in connection with my art, including through my choice of materials. I create my art using materials that already exist, and materials I find in nature and places I visit, such as recycling centers. My approach to work is very intuitive; I take many photos and write notes that inspire me and which I use when creating art.</p>
+   
+<img src="/public/billeder/aboutchristina.png" alt="">
+
+<h2>Glimpse of Christina Winsløw</h2>
+
+<video src="" controls></video>
+</div>
+
     <Footer/>
 </Layout>
+
+<style>
+    h1{
+        padding-top: 6rem;
+        text-align: center;
+        padding-bottom: 2rem;
+    }
+    h2{
+       display: block;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    }
+
+.sektion_body {
+    margin: 2rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.sektion_body h2 {
+    justify-self: start; /* Justerer vandret placering til venstre */
+    align-self: start; /* Justerer lodret placering til start (top) */
+    text-align: left; /* Venstrejuster tekst */
+}
+p {
+    text-align: left; /* Venstrejuster tekst */
+    justify-self: center; /* Centrerer vandret placering */
+    padding-bottom: 2rem;
+    white-space: pre-line;
+}
+
+    .static{
+        position: absolute;
+    }
+
+
+    video{
+        width: 100%;
+    }
+
+    
+ 
+
+
+</style>
