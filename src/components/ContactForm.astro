@@ -1,68 +1,119 @@
----
-import '../css/style.css' 
----
-
-
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Link til din CSS-fil -->
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-      }
-      .contact-form {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-      .contact-form div {
-        margin-bottom: 15px;
-      }
-      .contact-form label {
-        display: block;
-        margin-bottom: 5px;
-      }
-      .contact-form input,
-      .contact-form textarea {
-        width: 100%;
-        padding: 8px;
-        box-sizing: border-box;
-      }
-      .contact-form button {
-        padding: 10px 15px;
-        background-color: #28a745;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .contact-form button:hover {
-        background-color: #218838;
-      }
+        body {
+            font-family: helvetica;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: left; /* Venstrestil */
+            max-width: 800px; /* Begræns maksimal bredden for bedre læsbarhed */
+            margin: 0 auto 20px; /* Centrer vandret og tilføj margen nederst */
+        }
+
+        h2, p {
+            text-align: left; /* Venstrestil */
+            max-width: 800px; /* Begræns maksimal bredden for bedre læsbarhed */
+            margin: 0 auto; /* Centrer vandret */
+        }
+
+        .contact-form {
+            padding: 20px;
+            border-radius: 10px;
+            display: grid;
+            gap: 10px;
+            max-width: 800px; /* Begræns maksimal bredden for bedre udseende */
+        }
+
+        .contact-form div {
+            display: grid;
+            gap: 10px;
+        }
+
+        .contact-form div.full-width {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form div.half-width {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: calc(100% - 22px); /* Trækker 22px fra bredden for at tage højde for stregen */
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc; /* Tilføjer streg rundt om tekstfelterne */
+            border-radius: 5px; /* Runder hjørnerne */
+        }
+
+        .contact-form button {
+            grid-column: span 2;
+            padding: 12px 20px;
+            background-color: #f2f2f2f;
+            color: black;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .contact-form button:hover {
+            outline: black;
+        }
+
+        .required {
+            font-weight: normal;
+        }
+
+        /* Placer beskedfeltet i bunden */
+        .message-row {
+            grid-column: 1 / span 2;
+        }
+
+   
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <h1>CONTACT FOR ANY QUESTIONS?</h1>
-    <p>Fill out the form with any questions or inquiries. </p>
+    <p>Fill out the form with any questions or inquiries.</p>
     <form class="contact-form" method="post" action="/submit">
-      <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
-      <button type="submit">Send</button>
+        <div class="half-width">
+            <div>
+                <label for="firstName">First Name <span class="required">(required)</span></label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div>
+                <label for="lastName">Last Name <span class="required">(required)</span></label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div>
+                <label for="email">Email <span class="required">(required)</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+        </div>
+        <div class="message-row full-width">
+            <label for="message">Message <span class="required">(required)</span></label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit">SUBMIT</button>
     </form>
-  </body>
+</body>
 </html>
