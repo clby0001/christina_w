@@ -12,7 +12,7 @@ import "../css/style.css";
       <li><a href="tickets">Works</a></li>
       <li><a href="program">Exhibitions</a></li>
       <li><a href="contact">About</a></li>
-      <li><a href="volunteer">Contact</a></li>
+      <li><a href="">Contact</a></li>
     </ul>
     <a href="/"><img src="/public/billeder/kurv.png" alt="kurv" /></a>
     <div class="burger">
@@ -115,7 +115,29 @@ import "../css/style.css";
     background-color: #000000; /* Dit valgte farve for burgermenuen */
     transition: all 0.2s linear;
   }
+
+  /*DESKTOP*/ 
+   @media screen and (min-width: 768px) {
+    .menu {
+      display: flex; /* Viser menuen i en horisontal linje */
+      gap: 30px; /* Afstand mellem menu-punkter */
+      align-items: center;
+      justify-content: flex-end; /* Placerer menuen i højre side */
+      text-transform: uppercase;
+      font-size: 0.8rem; /* Fra dit oprindelige design */
+      padding-right: 3rem;
+    }
+
+    .burger {
+      display: none; /* Skjuler burger-menuen på desktop */
+    }
+
+    ul {
+      padding-top: 0;
+    }
+  }
 </style>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
