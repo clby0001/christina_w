@@ -37,3 +37,8 @@ p {
   font-family: "Helvetica", sans-serif;
   font-size: var(--paragraph-mobile-font-size);
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}

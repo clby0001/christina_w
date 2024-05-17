@@ -1,9 +1,15 @@
 ---
-import '../css/style.css' 
-import Layout from '../layouts/Layout.astro'
-import Footer from '../components/Footer.astro';
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import forsidebillede from "../img/forsidebillede.jpg";
 ---
-<Layout title="Something" >
-    
-    <Footer/>
+
+<Layout title="Something">
+  <div>
+    <Image src={forsidebillede} alt="billede med kunst" />
+  </div>
+
+  <Footer />
 </Layout>
