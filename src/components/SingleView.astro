@@ -1,0 +1,27 @@
+---
+import "../css/style.css";
+const { imageSrc, title, price, format, overskrift, describtion } = Astro.props;
+---
+<a href="/" class="singleviewproduct-card">
+    <div class="img"><img src={imageSrc} alt={title} /></div>
+    <div class="container">
+        <h2>{title}</h2>
+        <h2>{price}</h2>
+        <p>{format}</p>
+        <button onclick="handleButtonClick()">Køb nu</button>
+        <p>{overskrift}</p>
+        <p>{describtion}</p>
+    </div>
+</a>
+
+<style>
+
+
+</style>
+
+<script>
+function handleButtonClick() {
+    console.log("Knappen blev klikket");
+    // Tilføj din logik her, fx navigation eller tilføjelse til kurv
+}
+</script>
