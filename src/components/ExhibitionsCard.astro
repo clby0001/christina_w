@@ -1,58 +1,97 @@
 ---
 import "../css/style.css";
+const { imageSrc, title1, title2, address, date, title } = Astro.props;
 ---
-<div class="udstilling" id="udstilling">
-  <img src="/public/billeder/circleofnature.png" alt="" />
-  <div class="text-content">
-    <h3>UPCOMING</h3>
-    <h2>Circle of Nature</h2>
-    <p>Experience "Circle of Nature" at Strandlodsvej 13Y starting May 24th. This installation incorporates historic wooden blocks from the streets of Copenhagen, telling a story of transformation and new beginnings. Art and sustainability converge in a reflection on the cycles of nature and recycling.</p>
-    <h4>May 24-27 2024</h4>
-    <h4>Strandlosvej 21, Amager</h4>
-  </div>
+
+
+<div class="exhibition-card">
+    <div class="container">
+        <img src={imageSrc} alt={title1} style="width: 100%; height: auto;" />
+        <div class="text">
+            <div class="container4">
+   <overskrift>{title1}</overskrift>
+   </div>
+   <div class="container2">
+    <underoverskrift>{title2}</underoverskrift>
+    </div>
+    <div class="container3">
+    <description>{title}</description>
+    </div>
+    <div class="container5">
+    <date>{date}</date>
+     <address>{address}</address>
+     </div>
+     </div>
+    </div>
 </div>
 
 <style>
-/* Reset some basic styles */
-body, h3, h2, p, h4 {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.container {
+    justify-content: flex-start; /* Placerer elementerne til venstre */
+    text-align: left; /* Justerer teksten til venstre */
+    padding: 15px;
+    background-color: #C6D2D2;
+
+
 }
 
-/* Container styles */
-.udstilling {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 20px;
-  gap: 20px;
+.container2 {
+
+margin-bottom: 10px;
+
 }
 
-.udstilling img {
-  max-width: 50%;
-  height: auto;
-  flex-shrink: 0;
+.container4{
+margin-bottom: 20px;
 }
 
-.text-content {
-  max-width: 50%;
+
+.exhibition-card {
+    margin: 20px 0; /* Tilføjer lidt luft omkring kortet */
+padding-top: 10rem;
 }
 
-@media (max-width: 767px) {
-  .udstilling {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .udstilling img,
-  .text-content {
-    max-width: 100%;
-  }
-
-  .udstilling img {
+.text overskrift {
+    font-size: 15px;
+font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
-  }
 }
 
+
+/* Styling for underoverskrift */
+.text underoverskrift {
+    font-family: karla;
+    font-weight:bold;
+       font-size: 25px;
+       margin-bottom: 10px;
+
+}
+
+.text description{
+    font-family: karla;
+
+}
+
+
+@media (min-width: 1200px) {
+  .container {
+        display: grid; /* Ændrer layoutet til grid på desktop */
+        grid-template-columns: 50% 50%; /* To kolonner: 50% til billedet og 50% til teksten */
+        gap: 20px; /* Mellemrum mellem kolonnerne */
+        margin-top: 100px;
+    }
+
+    .exhibition-card {
+        padding-top: 0; /* Fjerner toppadding på desktop */
+    }
+       .container3 {
+
+        margin-bottom: 300px;
+    }
+
+    .container4{
+margin-bottom: 50px;
+}
+
+}
 </style>
