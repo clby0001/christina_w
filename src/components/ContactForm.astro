@@ -1,119 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="../css/style.css"> <!-- Link til din CSS-fil -->
-    <style>
-        body {
-            font-family: helvetica;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+---
+import "../css/style.css";
+---
 
-        h1 {
-            text-align: left; /* Venstrestil */
-            max-width: 800px; /* Begræns maksimal bredden for bedre læsbarhed */
-            margin: 0 auto 20px; /* Centrer vandret og tilføj margen nederst */
-        }
+<html>
+    
 
-        h2, p {
-            text-align: left; /* Venstrestil */
-            max-width: 800px; /* Begræns maksimal bredden for bedre læsbarhed */
-            margin: 0 auto; /* Centrer vandret */
-        }
-
-        .contact-form {
-            padding: 20px;
-            border-radius: 10px;
-            display: grid;
-            gap: 10px;
-            max-width: 800px; /* Begræns maksimal bredden for bedre udseende */
-        }
-
-        .contact-form div {
-            display: grid;
-            gap: 10px;
-        }
-
-        .contact-form div.full-width {
-            grid-template-columns: 1fr;
-        }
-
-        .contact-form div.half-width {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: calc(100% - 22px); /* Trækker 22px fra bredden for at tage højde for stregen */
-            padding: 10px;
-            box-sizing: border-box;
-            border: 1px solid #ccc; /* Tilføjer streg rundt om tekstfelterne */
-            border-radius: 5px; /* Runder hjørnerne */
-        }
-
-        .contact-form button {
-            grid-column: span 2;
-            padding: 12px 20px;
-            background-color: #f2f2f2f;
-            color: black;
-            border: none;
-            border-radius: 15px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        .contact-form button:hover {
-            outline: black;
-        }
-
-        .required {
-            font-weight: normal;
-        }
-
-        /* Placer beskedfeltet i bunden */
-        .message-row {
-            grid-column: 1 / span 2;
-        }
-
+        <h1>CONTACT FOR ANY QUESTIONS?</h1>
+        <p>Fill out the form with any questions or inquiries.</p>
    
-        }
-    </style>
-</head>
-<body>
-    <h1>CONTACT FOR ANY QUESTIONS?</h1>
-    <p>Fill out the form with any questions or inquiries.</p>
-    <form class="contact-form" method="post" action="/submit">
-        <div class="half-width">
-            <div>
-                <label for="firstName">First Name <span class="required">(required)</span></label>
-                <input type="text" id="firstName" name="firstName" required>
+
+    <div class="kontaktform">
+    <form action="/submit" method="post" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact-form">
+        <div class="input-group">
+            <div class="input-field">
+                <label for="first-name">First Name<span class="required">(required)</span>:</label>
+                <input type="text" id="first-name" name="first-name" required>
             </div>
-            <div>
-                <label for="lastName">Last Name <span class="required">(required)</span></label>
-                <input type="text" id="lastName" name="lastName" required>
-            </div>
-            <div>
-                <label for="email">Email <span class="required">(required)</span></label>
-                <input type="email" id="email" name="email" required>
+            <div class="input-field">
+                <label for="last-name">Last Name<span class="required">(required)</span>:</label>
+                <input type="text" id="last-name" name="last-name" required>
             </div>
         </div>
-        <div class="message-row full-width">
-            <label for="message">Message <span class="required">(required)</span></label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+        <div class="input-field">
+            <label for="email">Email<span class="required">(required)</span>:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-field">
+            <label for="message">Message<span class="required">(required)</span>:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
         </div>
         <button type="submit">SUBMIT</button>
     </form>
-</body>
+</div>
+
+    
 </html>
+
+
+<style>
+
+h1 {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 100px;
+    margin-left: 40px;
+}
+
+p {
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: karla;
+     margin-left: 40px;
+}
+
+
+h4{
+     font-family: karla;
+     margin-left: 40px;
+}
+
+.kontaktform {
+ 
+    padding: 20px;
+
+    width: 100%;
+    max-width: 400px; /* Juster denne værdi efter behov */
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input-field {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: karla;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #1111;
+  
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+
+
+
+    font-size: 16px;
+    cursor: pointer;
+    font-family: karla;
+}
+
+.required {
+font-weight: 100;
+font-family: karla;
+
+}
+
+
+
+</style>
