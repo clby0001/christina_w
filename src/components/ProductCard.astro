@@ -1,0 +1,33 @@
+---
+import "../css/style.css";
+const { imageSrc, title, price } = Astro.props;
+
+---
+<a href="/" class="product-card">
+    <div class="img"><img src={imageSrc} alt={title} /></div>
+    <div class="container">
+        <h2>{title}</h2>
+        <h2>{price}</h2>
+    </div>
+</a>
+
+<style>
+
+    img{
+        padding: 2rem;
+    }
+       .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            font-size: 0.8rem;
+        }
+
+    img {
+        display: flex 
+        flex-direction: column; 
+    }
+
+
+</style>
