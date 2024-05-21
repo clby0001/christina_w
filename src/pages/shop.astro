@@ -6,6 +6,8 @@ import ProductCard from "../components/ProductCard.astro";
 ---
 
 <Layout title="Something">
+  <h1>SHOP</h1>
+
   <ProductCard imageSrc="/public/billeder/productimg/dustyrose.jpg" title="“Life Circles” Dusty Rose" price="DKK 6000,-" />
 
   <ProductCard imageSrc="/public/billeder/productimg/lightblue.jpg" title="“Life Circles” Light blue" price="DKK 6000,-" />
@@ -17,3 +19,10 @@ import ProductCard from "../components/ProductCard.astro";
   <ProductCard imageSrc="/public/billeder/productimg/Cohesian.jpg" title="“Mixed Media” Cohesian " price="DKK 4100,-" />
   <Footer />
 </Layout>
+
+<style>
+  h1 {
+    padding-top: 7rem;
+    text-align: center;
+  }
+</style>
