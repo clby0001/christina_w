@@ -1,0 +1,12 @@
+---
+import "../css/style.css";
+const { text, title, describtion, imageSrc } = Astro.props;
+---
+<a href="/" class="singleviewproduct-card">
+    <div class="img"><img src={imageSrc} alt={title} /></div>
+    <div class="container">
+        <h2>{text}</h2>
+        <h2>{describtion}</h2>
+         <div class="img"><img src={imageSrc} alt={title} /></div>
+    </div>
+</a>
