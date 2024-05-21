@@ -1,126 +1,110 @@
 ---
-import WorkCardButton from './WorkCardButton.astro'
+import WorkCardButton from "./WorkCardButton.astro";
 
-const cardImages = ['src/img/front_page_card_images/mixedmedia.webp', 'src/img/front_page_card_images/lifecircles.webp', 'src/img/front_page_card_images/balancebillede.webp', 'src/img/front_page_card_images/aboutbillede.webp']
+const cardImages = ["src/img/front_page_card_images/mixedmedia.webp", "src/img/front_page_card_images/lifecircles.webp", "src/img/front_page_card_images/balancebillede.webp", "src/img/front_page_card_images/aboutbillede.webp"];
 
-const titles = ['Mixedmedia', 'Life Circles', 'Installations', 'About']
-const subtitles = ['Collage', '2014', 'Balance Me Balance Us', 'Hey']
+const titles = ["Mixedmedia", "Life Circles", "Installations", "About"];
+const subtitles = ["Collage", "2014", "Balance Me Balance Us", "Hey"];
 
 const workCards = titles.map((title, index) => ({
-    workCardImage: cardImages[index],
-    workCardTitle: titles[index],
-    workCardSubtitle: subtitles[index],
-}))
+  workCardImage: cardImages[index],
+  workCardTitle: titles[index],
+  workCardSubtitle: subtitles[index],
+}));
 ---
 
 <div class="container work-cards-container">
-    {
-        workCards.map((workCard, index) => (
-            <div class="card work-card" id="work_card">
-                <img
-                    src={workCard.workCardImage}
-                    alt={workCard.workCardImage}
-                />
-                <div class="container titles-container">
-                    <h3 class="title" id="title">
-                        {workCard.workCardTitle}
-                    </h3>
-                    <p class="subtitle" id="subtitle">
-                        {workCard.workCardSubtitle}
-                    </p>
+  {
+    workCards.map((workCard, index) => (
+      <div class="card work-card" id="work_card">
+        <img src={workCard.workCardImage} alt={workCard.workCardImage} />
+        <div class="container titles-container">
+          <h3 class="title" id="title">
+            {workCard.workCardTitle}
+          </h3>
+          <p class="subtitle" id="subtitle">
+            {workCard.workCardSubtitle}
+          </p>
 
+          <div class="second-subtitle-and-button-container">
+            {index % 4 === 3 && (
+              <div class="second-subtitle-and-button-container">
+                <p>Hey</p>
 
-                    <div class="second-subtitle-and-button-container">
-                        {index % 4 === 3 && (
-                        <div class="second-subtitle-and-button-container">
-                            <p>
-                                Hey
-                            </p>
-
-                            <WorkCardButton workCardButtonText="Link"/>
-                        </div>
-                    )}
-                    </div>
-                </div>
-            </div>
-        ))
-    }
+                <WorkCardButton workCardButtonText="Link" />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    ))
+  }
 </div>
 
 <style>
-  .card {
-    height: 100vh;
+  .second-subtitle-and-button-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .card.work-card {
+    display: flex;
+    flex-direction: column;
   }
 
-    .second-subtitle-and-button-container
-    {
-        display: flex;
-        flex-direction: column;
-    }
-    .card.work-card {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        min-height: 300px;
+  .card.work-card:nth-child(odd) .container.titles-container {
+    order: 1;
+    text-align: left;
+  }
+
+  .card.work-card img {
+    margin: 2rem;
+  }
+
+  .card.work-card .container.titles-container {
+    margin-top: 10px;
+  }
+
+  .card.work-card .container.titles-container p.subtitle {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .second-subtitle-and-button-container {
+    margin: 20px 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    .second-subtitle-and-button-container {
+      align-items: end;
     }
 
-    .card.work-card:nth-child(odd) .container.titles-container {
-        order: 1;
-        text-align: left;
+    .card.work-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: start;
+      gap: 40px;
+      height: 600px;
+      width: 100vw;
     }
 
     .card.work-card img {
-        height: 100%;
+      flex-basis: 50%;
+      object-fit: cover;
+      height: 100%;
     }
 
     .card.work-card .container.titles-container {
-        margin-top: 10px;
+      flex-basis: 50%;
+      text-align: right;
+    }
+    .card.work-card:nth-child(odd) .container.titles-container {
+      order: -1;
+      text-align: left;
     }
 
-    .card.work-card .container.titles-container p.subtitle {
-        font-size: 16px;
-        margin-top: 5px;
+    .titles-container {
+      padding: 20px 30px;
     }
-
-    .second-subtitle-and-button-container
-    {
-        margin: 20px 0;
-    }
-
-    @media screen and (min-width: 768px) {
-        .second-subtitle-and-button-container
-        {
-            align-items: end;
-        }
-
-        .card.work-card {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: start;
-            gap: 40px;
-            height: 400px;
-            width: 100vw;
-        }
-
-        .card.work-card img {
-            flex-basis: 50%;
-            object-fit: cover;
-            height: 100%;
-        }
-
-        .card.work-card .container.titles-container {
-            flex-basis: 50%;
-            text-align: right;
-        }
-        .card.work-card:nth-child(odd) .container.titles-container {
-            order: -1;
-            text-align: left;
-        }
-
-        .titles-container
-        {
-            padding: 20px 30px;
-        }
-    }
+  }
 </style>
