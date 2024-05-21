@@ -1,0 +1,17 @@
+---
+import "../css/style.css";
+const { text, title, describtion, imageSrc } = Astro.props;
+---
+
+<div class="component2">
+  <h2>{text}</h2>
+</div>
+
+<style>
+  .component2 h2 {
+    font-size: 1.6rem;
+    text-align: left;
+    justify-content: center;
+    margin: 2rem;
+  }
+</style>

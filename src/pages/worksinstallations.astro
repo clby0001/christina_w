@@ -1,0 +1,26 @@
+---
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Workscomponent1 from "../components/workscomponent1.astro";
+import Workscomponent2 from "../components/workscomponent2.astro";
+import Workscomponent3 from "../components/workscomponent3.astro";
+---
+
+<Layout title="Something">
+  <h1>INSTALLATIONS</h1>
+
+  <Workscomponent1 text="Balance Me, Balance Us" describtion="My latest installation, 'Balance Me, Balance Us', explores creating external balance to achieve internal harmony. I've recently embraced liquid ink, a return to basic techniques with line drawings that naturally expand on their surfaces.  At the moment I'm deeply fascinated by century-old wooden blocks found in my father's house. These are now integral to spatial installations symbolizing life's transience and continuous growth. They encapsulate the life cycle and our developmental stages. my work is created with careful consideration of the use of sustainable materials and tools." imageSrc="public/billeder/installations/installation1.jpeg" />
+
+  <Workscomponent2 text="“My installation displays nature's cycle of decay and renewal. Using recycled materials with historical value not only promotes sustainability but also adds depth as the past is reborn in modern forms.”" />
+
+  <Workscomponent3 img1="public/billeder/installations/installation2.jpeg" img2="public/billeder/installations/installation3.jpeg" img3="public/billeder/installations/installation4.jpeg" />
+  <Footer />
+</Layout>
+
+<style>
+  h1 {
+    padding-top: 7rem;
+    text-align: center;
+  }
+</style>
