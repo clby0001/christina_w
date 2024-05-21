@@ -1,11 +1,11 @@
 ---
 import "../css/style.css";
-const { imageSrc, title1, title2, address, date, title } = Astro.props;
+const { imageSrc, title1, title2, address, date, title, color } = Astro.props;
 ---
 
 
-<div class="exhibition-card">
-    <div class="container">
+<div class="exhibition-card"  >
+    <div class=`container ${color}`)>
         <img src={imageSrc} alt={title1} style="width: 100%; height: auto;" />
         <div class="text">
             <div class="container4">
@@ -30,9 +30,21 @@ const { imageSrc, title1, title2, address, date, title } = Astro.props;
     justify-content: flex-start; /* Placerer elementerne til venstre */
     text-align: left; /* Justerer teksten til venstre */
     padding: 15px;
+    /* background-color: #C6D2D2; */
+
+
+}
+
+.green{
     background-color: #C6D2D2;
+}
 
+.pink{
+    background-color: #F5F5F5;
+}
 
+.beige{
+    background-color: #C9BBB8;
 }
 
 .container2 {
