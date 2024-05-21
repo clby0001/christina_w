@@ -1,12 +1,26 @@
 ---
-import '../css/style.css' 
-import Layout from '../layouts/Layout.astro'
-import Footer from '../components/Footer.astro';
-import Workscomponent1 from '../components/workscomponent1.astro';
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Workscomponent1 from "../components/workscomponent1.astro";
+import Workscomponent2 from "../components/workscomponent2.astro";
+import Workscomponent3 from "../components/workscomponent3.astro";
 ---
 
-<Layout title="Something" >
-   
-<Workscomponent1/ />
-    <Footer/>
+<Layout title="Something">
+  <h1>MIXED MEDIA COLLAGE</h1>
+
+  <Workscomponent1 text="Female Body Map " describtion="Female Body Map is a mixed media collage that explores and reflects the shapes of the female body through a creative and sustainable perspective. This artwork is created using recycled materials found in everyday life—from paper from old magazines to naturally collected elements and textiles from recycled clothing. These various materials are assembled into unique collages that reflect both the beauty and complexity of women. I prioritize materials that already exist, contributing to a deeper narrative about recycling and creative reuse." imageSrc="public/billeder/mixedmedia/mixedmedia1.jpeg" />
+
+  <Workscomponent2 text="The map of the amazing female body and the phases it undergoes. When the female body and mind feel weak, I remember what it has endured and achieved. Birth, puberty, giving life, losing life, illness, shock, happiness, trauma, balance, imbalance—a life fully lived." />
+
+  <Workscomponent3 imageSrc="/public/billeder/mixedmedia/mixedmedia1.jpeg" />
+  <Footer />
 </Layout>
+
+<style>
+  h1 {
+    padding-top: 7rem;
+    text-align: center;
+  }
+</style>

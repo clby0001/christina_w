@@ -1,12 +1,66 @@
 ---
 import "../css/style.css";
-const { text, title, describtion, imageSrc } = Astro.props;
+const { text, describtion, imageSrc } = Astro.props;
 ---
-<a href="/" class="singleviewproduct-card">
-    <div class="img"><img src={imageSrc} alt={title} /></div>
-    <div class="container">
-        <h2>{text}</h2>
-        <h2>{describtion}</h2>
-         <div class="img"><img src={imageSrc} alt={title} /></div>
-    </div>
-</a>
+
+<div class="sektion">
+  <div class="component1">
+    <h2>{text}</h2>
+    <p>{describtion}</p>
+  </div>
+  <div class="img">
+    <div class="img"><img src={imageSrc} /></div>
+  </div>
+</div>
+
+<style>
+  .sektion {
+    display: flex;
+    flex-direction: column; /* Standard layout for mobile */
+    text-align: left;
+    margin: 2rem;
+  }
+
+  .component1 {
+    margin-bottom: 20px; /* Afstand mellem tekst og billede i mobile layout */
+  }
+
+  .component1 overskrift {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .component1 p {
+    font-size: 1rem;
+    padding-top: 2rem;
+  }
+
+  .img img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Media query for desktop */
+  @media (min-width: 768px) {
+    .sektion {
+      flex-direction: row; /* Side-by-side layout for desktop */
+      align-items: flex-start;
+    }
+
+    .component1 {
+      flex: 1; /* Få teksten til at fylde højre side */
+      margin-right: 20px; /* Afstand mellem tekst og billede i desktop layout */
+      margin-bottom: 0; /* Fjern margin-bottom for desktop */
+    }
+
+    .img {
+      flex: 1; /* Få billedet til at fylde hele venstre side */
+    }
+
+    .img img {
+      width: 100%; /* Få billedet til at fylde hele containeren */
+      height: 100%; /* Få billedet til at fylde hele containeren */
+      object-fit: cover; /* Gør billedet fylder hele containeren uden at miste proportioner */
+    }
+  }
+</style>

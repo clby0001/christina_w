@@ -1,37 +1,19 @@
 ---
-import '../css/style.css' 
-import Layout from '../layouts/Layout.astro'
-import Footer from '../components/Footer.astro';
-import ProductCard from '../components/ProductCard.astro';
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import ProductCard from "../components/ProductCard.astro";
 ---
 
-<Layout title="Something" >
-    <ProductCard/
-      imageSrc="/public/billeder/productimg/dustyrose.jpg" 
-            title="“Life Circles” Dusty Rose" 
-            price="DKK 6000,-" />
+<Layout title="Something">
+  <ProductCard imageSrc="/public/billeder/productimg/dustyrose.jpg" title="“Life Circles” Dusty Rose" price="DKK 6000,-" />
 
-    <ProductCard/
-      imageSrc="/public/billeder/productimg/lightblue.jpg" 
-    title="“Life Circles” Light blue" 
-            price="DKK 6000,-" />
- 
-    <ProductCard/
-          imageSrc="/public/billeder/productimg/Wavesofnewbegingins.jpeg" 
-            title="“Mixed Media” Waves of new begingins" 
-            price="DKK 7800,-" />
-     
-    <ProductCard/
-            imageSrc="/public/billeder/productimg/openmind.jpeg" 
-            title="“Mixed Media” Open mind" 
-            price="DKK 9100,-" />
-    <ProductCard/
- imageSrc="/public/billeder/productimg/Gratefulhands.jpeg" 
-            title="“Mixed Media” Grateful Hands " 
-            price="DKK 7700,-" />
-    <ProductCard/
- imageSrc="/public/billeder/productimg/Cohesian.jpg" 
-            title="“Mixed Media” Cohesian " 
-            price="DKK 4100,-" />
-    <Footer/>
+  <ProductCard imageSrc="/public/billeder/productimg/lightblue.jpg" title="“Life Circles” Light blue" price="DKK 6000,-" />
+
+  <ProductCard imageSrc="/public/billeder/productimg/Wavesofnewbegingins.jpeg" title="“Mixed Media” Waves of new begingins" price="DKK 7800,-" />
+
+  <ProductCard imageSrc="/public/billeder/productimg/openmind.jpeg" title="“Mixed Media” Open mind" price="DKK 9100,-" />
+  <ProductCard imageSrc="/public/billeder/productimg/Gratefulhands.jpeg" title="“Mixed Media” Grateful Hands " price="DKK 7700,-" />
+  <ProductCard imageSrc="/public/billeder/productimg/Cohesian.jpg" title="“Mixed Media” Cohesian " price="DKK 4100,-" />
+  <Footer />
 </Layout>

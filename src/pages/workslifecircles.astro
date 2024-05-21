@@ -1,0 +1,26 @@
+---
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Workscomponent1 from "../components/workscomponent1.astro";
+import Workscomponent2 from "../components/workscomponent2.astro";
+import Workscomponent3 from "../components/workscomponent3.astro";
+---
+
+<Layout title="Something">
+  <h1>LIFE CIRCLES</h1>
+
+  <Workscomponent1 text="Perfect imperfect circle" describtion="Life Circle is a project I have been working on since 2014. This artwork emerged during a period in my life when I was experiencing a creative block. Without a set plan, I began to create line drawings, drawing lines in circles. This process evolved into a form of meditative practice for me,  which has now developed into an ongoing project and a deeper connection with myself. Many people have told me that they experience a special peace and meditative state when they look at the circles in the painting. The work resonates in a unique way with viewers, creating a sense of peace and inner tranquility" imageSrc="public/billeder/lifecircles/lifecircles1.jpg" />
+
+  <Workscomponent2 text="The map of the amazing female body and the phases it undergoes. When the female body and mind feel weak, I remember what it has endured and achieved. Birth, puberty, giving life, losing life, illness, shock, happiness, trauma, balance, imbalance—a life fully lived." />
+
+  <Workscomponent3 img1="public/billeder/lifecircles/lifecircles2.jpg" img2="public/billeder/lifecircles/lifecircles3.jpg" />
+  <Footer />
+</Layout>
+
+<style>
+  h1 {
+    padding-top: 7rem;
+    text-align: center;
+  }
+</style>
