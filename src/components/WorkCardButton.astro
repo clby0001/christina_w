@@ -1,0 +1,32 @@
+---
+const {href, target, workCardButtonText} = Astro.props
+---
+
+<a href={href} target={target} class="work-card-btn">{workCardButtonText}</a>
+
+
+<style>
+    .work-card-btn
+    {
+        font-family: system-ui;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        border: 2px solid #000;
+        padding: 10px 15px;
+        width: 100px;
+        min-width: fit-content;
+        text-transform: uppercase;
+        transition: color .2s ease-in, background .2s ease-in;
+    }
+
+    .work-card-btn:hover
+    {
+        background-color: #000;
+        color: #fff;
+        transition: color .2s ease-in, background .2s ease-in;
+    }
+</style>

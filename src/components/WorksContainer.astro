@@ -3,11 +3,26 @@ import WorkCards from "./WorkCards.astro";
 ---
 
 <div class="container work-cards-container">
+  <header>
+    <h1>
+Explore My Works
+    </h1>
+  </header>
   <WorkCards />
 </div>
 
 <style>
   .work-cards-container {
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    gap: 40px;
+    margin-top: 280px;
+  }
+
+  header h1 {
+    text-transform: uppercase;
+    padding: 40px;
   }
 </style>
