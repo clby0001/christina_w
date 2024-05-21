@@ -27,7 +27,14 @@ body {
   background-color: var(--background-color);
 }
 
-h1,
+h1 {
+  font-family: "Karla", sans-serif;
+  padding-top: 6rem;
+  font-size: 1.7rem;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
 h2,
 h3,
 h4,
@@ -39,6 +46,10 @@ h6 {
 p {
   font-family: "Helvetica", sans-serif;
   font-size: var(--paragraph-mobile-font-size);
+  font-family: Helvetica, sans-serif;
+  margin-bottom: 10px;
+  line-height: 1.6rem;
+  font-size: 0.9rem;
 }
 
 img {

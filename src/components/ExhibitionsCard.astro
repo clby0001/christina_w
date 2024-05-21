@@ -3,95 +3,101 @@ import "../css/style.css";
 const { imageSrc, title1, title2, address, date, title } = Astro.props;
 ---
 
-
 <div class="exhibition-card">
-    <div class="container">
-        <img src={imageSrc} alt={title1} style="width: 100%; height: auto;" />
-        <div class="text">
-            <div class="container4">
-   <overskrift>{title1}</overskrift>
-   </div>
-   <div class="container2">
-    <underoverskrift>{title2}</underoverskrift>
+  <div class="container">
+    <img src={imageSrc} alt={title1} style="width: 100%; height: auto;" />
+    <div class="text">
+      <div class="container4">
+        <overskrift>{title1}</overskrift>
+      </div>
+      <div class="container2">
+        <underoverskrift>{title2}</underoverskrift>
+      </div>
+      <div class="container3">
+        <description>{title}</description>
+      </div>
+      <div class="container5">
+        <date>{date}</date>
+        <address>{address}</address>
+      </div>
     </div>
-    <div class="container3">
-    <description>{title}</description>
-    </div>
-    <div class="container5">
-    <date>{date}</date>
-     <address>{address}</address>
-     </div>
-     </div>
-    </div>
+  </div>
 </div>
 
 <style>
-.container {
+  .container {
     justify-content: flex-start; /* Placerer elementerne til venstre */
     text-align: left; /* Justerer teksten til venstre */
     padding: 15px;
-    background-color: #C6D2D2;
+    background-color: #c6d2d2;
+  }
 
+  .container2 {
+    margin-bottom: 10px;
+  }
 
-}
-
-.container2 {
-
-margin-bottom: 10px;
-
-}
-
-.container4{
-margin-bottom: 20px;
-}
-
-
-.exhibition-card {
-    margin: 20px 0; /* Tilføjer lidt luft omkring kortet */
-padding-top: 10rem;
-}
-
-.text overskrift {
-    font-size: 15px;
-font-family: Arial, Helvetica, sans-serif;
+  .container4 {
     margin-bottom: 20px;
-}
+  }
+  .container3 {
+    padding-bottom: 1rem;
+  }
 
+  .exhibition-card {
+    margin: 20px 0; /* Tilføjer lidt luft omkring kortet */
+    padding-top: 10rem;
+  }
 
-/* Styling for underoverskrift */
-.text underoverskrift {
+  .text overskrift {
+    font-size: 15px;
     font-family: karla;
-    font-weight:bold;
-       font-size: 25px;
-       margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
 
-}
-
-.text description{
+  /* Styling for underoverskrift */
+  .text underoverskrift {
     font-family: karla;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+    line-height: 1.6rem;
+    font-size: 0.9rem;
+  }
 
-}
+  date {
+    font-family: Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
 
+  address {
+    font-family: Helvetica, sans-serif;
+    font-size: 0.9rem;
+  }
 
-@media (min-width: 1200px) {
-  .container {
-        display: grid; /* Ændrer layoutet til grid på desktop */
-        grid-template-columns: 50% 50%; /* To kolonner: 50% til billedet og 50% til teksten */
-        gap: 20px; /* Mellemrum mellem kolonnerne */
-        margin-top: 100px;
+  .text description {
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 10px;
+    line-height: 1.6rem;
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      display: grid; /* Ændrer layoutet til grid på desktop */
+      grid-template-columns: 50% 50%; /* To kolonner: 50% til billedet og 50% til teksten */
+      gap: 20px; /* Mellemrum mellem kolonnerne */
+      margin-top: 100px;
     }
 
     .exhibition-card {
-        padding-top: 0; /* Fjerner toppadding på desktop */
+      padding-top: 0; /* Fjerner toppadding på desktop */
     }
-       .container3 {
-
-        margin-bottom: 300px;
+    .container3 {
+      margin-bottom: 300px;
     }
 
-    .container4{
-margin-bottom: 50px;
-}
-
-}
+    .container4 {
+      margin-bottom: 50px;
+    }
+  }
 </style>
