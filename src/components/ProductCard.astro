@@ -1,32 +1,55 @@
 ---
 import "../css/style.css";
-const { imageSrc, title, price } = Astro.props;
+const { data } = Astro.props;
+console.log(data);
 ---
-<a href="/" class="product-card">
-    <div class="img"><img src={imageSrc} alt={title} /></div>
-    <div class="container">
-        <h2>{title}</h2>
-        <h2>{price}</h2>
+
+<div class="grid-container">
+  <a href={`shop/${data.slug}`} class="product-card">
+    <img src={data.Image} alt="Product Image" />
+    <div class="text-container">
+      <h2>{data.Name}</h2>
+      <h2>DKK {data.Price},-</h2>
     </div>
-</a>
+  </a>
+</div>
 
 <style>
+  /* Generel styling */
+  .product-card {
+    display: flex;
+    flex-direction: column; /* Arrangerer elementerne i en kolonne */
+    align-items: center; /* Centrerer elementerne i forhold til tværgående akse */
+    text-decoration: none;
+    padding-left: 3rem; /* Tilføjer lidt padding indeni kortet */
+    padding-right: 3rem;
+    padding-bottom: 4rem;
+    width: 100%; /* Sikrer at kortet fylder hele bredden af grid-cellen */
+  }
 
-    img{
-        padding: 2rem;
+  .product-card img {
+    margin-bottom: 2rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .text-container {
+    display: flex;
+    justify-content: space-between; /* Fordeler pladsen ligeligt mellem elementerne */
+    width: 100%;
+  }
+
+  .text-container h2 {
+    margin: 0; /* Fjerner margin for at sikre teksten står i en lige række */
+    font-size: 1rem; /* Justerer tekststørrelsen */
+    color: #333; /* Farver teksten */
+  }
+
+  /* Desktop-styling */
+  @media (min-width: 768px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* To kolonner på desktop */
     }
-       .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem;
-            font-size: 0.8rem;
-        }
-
-    img {
-        display: flex 
-        flex-direction: column; 
-    }
-
-
+  }
 </style>
