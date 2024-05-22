@@ -24,99 +24,135 @@ console.log(myData);
 
 <Layout title="something">
   <div class="content">
-    <img src={myData.Image} alt="Product Image" />
-    <div class="first-line">
-      <h1>{myData.Name}</h1>
-      <h2>DKK {myData.Price} ,-</h2>
+    <!-- Billede sektion -->
+    <div class="image-section">
+      <img src={myData.Image} alt="Product Image" />
     </div>
-    <div class="second-line">
-      <h3>{myData.Format} cm.</h3>
-      <button class="buy-button">Køb nu</button>
+
+    <!-- Tekst sektion -->
+    <div class="text-section">
+      <div class="first-line">
+        <h1>{myData.Name}</h1>
+        <h2>DKK {myData.Price} ,-</h2>
+      </div>
+      <div class="second-line">
+        <h3>{myData.Format} cm.</h3>
+        <button class="buy-button">Køb nu</button>
+      </div>
+      <h4>Description</h4>
+      <p>{myData.Description}</p>
     </div>
-    <h4>Describtion</h4>
-    <p>{myData.Description}</p>
   </div>
-
   <Footer />
+</Layout>
 
-  <script>
-    // Vælg knappen
-    const buyButton = document.querySelector(".buy-button");
+<script>
+  // Vælg knappen
+  const buyButton = document.querySelector(".buy-button");
 
-    // Tilføj eventlistener til knappen
-    buyButton.addEventListener("click", function () {
-      // Håndter købsklik
-      alert("Tak for dit køb!");
-    });
-  </script>
+  // Tilføj eventlistener til knappen
+  buyButton.addEventListener("click", function () {
+    // Håndter købsklik
+    alert("Tak for dit køb!");
+  });
+</script>
 
-  <style>
+<style>
+  .first-line,
+  .second-line {
+    display: flex;
+    justify-content: space-between; /* Fordeler pladsen ligeligt mellem elementerne */
+    width: 100%;
+    padding: 1 0.5rem 1rem; /* Tilføjer lidt indre margin for at centrere teksten bedre */
+  }
+
+  .content img {
+    max-width: 100%; /* Sørg for, at billedet ikke overstiger containerens bredde */
+    height: auto; /* Behold billedets proportioner */
+    margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
+    margin-top: 4rem; /* Ryk billedet lidt ned */
+  }
+
+  .content {
+    text-align: center; /* Centrerer indholdet */
+    padding: 2rem; /* Tilføjer polstring omkring indholdet */
+    display: grid; /* Brug CSS-grid til layout */
+    grid-template-columns: 1fr; /* Én kolonne som standard */
+  }
+
+  .content img {
+    max-width: 100%; /* Sørg for, at billedet ikke overstiger containerens bredde */
+    height: auto; /* Behold billedets proportioner */
+    margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
+  }
+
+  .content h1 {
+    font-size: 1.2rem; /* Juster størrelsen af overskriften */
+    margin-bottom: 2rem; /* Tilføj lidt afstand under overskriften */
+  }
+
+  .content h2 {
+    font-size: 1.2rem; /* Juster størrelsen af overskriften */
+    margin-bottom: 2rem;
+  }
+
+  .content h3 {
+    font-size: 1rem;
+  }
+
+  .content h4 {
+    text-align: left;
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+    padding-top: 2rem;
+  }
+
+  .content p {
+    font-size: 1rem; /* Juster størrelsen af teksten */
+    margin-bottom: 1rem; /* Tilføj lidt afstand under hver afsnit */
+    text-align: left;
+    padding: 1 0.5rem 1rem;
+  }
+
+  .buy-button {
+    padding: 0.5rem 2rem; /* Tilføj polstring til knappen */
+    background-color: transparent; /* Gennemsigtig baggrundsfarve */
+    color: black; /* Tekstfarve for knappen */
+    border: 1px solid black; /* Ydre streg */
+    cursor: pointer; /* Gør cursoren til en pil, når der holdes over knappen */
+    transition:
+      background-color 0.3s,
+      color 0.3s; /* Tilføj en overgang for en smidig ændring af farver */
+  }
+
+  .buy-button:hover {
+    background-color: #e7d9d9; /* Baggrundsfarve, når der holdes over */
+    color: black; /* Tekstfarve, når der holdes over */
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      grid-template-columns: 1fr 1fr; /* To kolonner på desktop */
+      align-items: start; /* Justerer starten af rækkerne */
+    }
+
+    .content img {
+      grid-column: 1 / span 1; /* Billedet spænder over en kolonne */
+      grid-row: 1 / span 2; /* Billedet spænder over to rækker */
+    }
+
     .first-line,
     .second-line {
-      display: flex;
-      justify-content: space-between; /* Fordeler pladsen ligeligt mellem elementerne */
-      width: 100%;
-      padding: 0 0.5rem; /* Tilføjer lidt indre margin for at centrere teksten bedre */
-    }
-
-    .content img {
-      max-width: 100%; /* Sørg for, at billedet ikke overstiger containerens bredde */
-      height: auto; /* Behold billedets proportioner */
-      margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
-      margin-top: 4rem; /* Ryk billedet lidt ned */
-    }
-
-    .content {
-      text-align: center; /* Centrerer indholdet */
-      padding: 2rem; /* Tilføjer polstring omkring indholdet */
-    }
-
-    .content img {
-      max-width: 100%; /* Sørg for, at billedet ikke overstiger containerens bredde */
-      height: auto; /* Behold billedets proportioner */
-      margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
-    }
-
-    .content h1 {
-      font-size: 1rem; /* Juster størrelsen af overskriften */
-      margin-bottom: 2rem; /* Tilføj lidt afstand under overskriften */
-    }
-
-    .content h2 {
-      font-size: 1rem; /* Juster størrelsen af overskriften */
-      margin-bottom: 2rem;
-    }
-
-    .content h3 {
-      font-size: 1rem;
+      grid-column: 2 / span 1; /* Tekstspænding over en kolonne */
     }
 
     .content h4 {
-      text-align: left;
-      padding: 2rem 0.5rem 1rem;
+      grid-column: 1 / span 2; /* Overskriften spænder over to kolonner */
     }
 
-    .content p {
-      font-size: 1rem; /* Juster størrelsen af teksten */
-      margin-bottom: 1rem; /* Tilføj lidt afstand under hver afsnit */
-      text-align: left;
-      padding: 0 0.5rem;
+    .text-section {
+      padding-top: 5rem;
+      padding: 5rem;
     }
-
-    .buy-button {
-      padding: 0.5rem 2rem; /* Tilføj polstring til knappen */
-      background-color: transparent; /* Gennemsigtig baggrundsfarve */
-      color: black; /* Tekstfarve for knappen */
-      border: 1px solid black; /* Ydre streg */
-      cursor: pointer; /* Gør cursoren til en pil, når der holdes over knappen */
-      transition:
-        background-color 0.3s,
-        color 0.3s; /* Tilføj en overgang for en smidig ændring af farver */
-    }
-
-    .buy-button:hover {
-      background-color: #e7d9d9; /* Baggrundsfarve, når der holdes over */
-      color: black; /* Tekstfarve, når der holdes over */
-    }
-  </style>
-</Layout>
+  }
+</style>
