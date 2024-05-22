@@ -1,24 +1,80 @@
 ---
 import WorkCardButton from "./WorkCardButton.astro";
 
-const cardImages = ["src/img/front_page_card_images/mixedmedia.webp", "src/img/front_page_card_images/lifecircles.webp", "src/img/front_page_card_images/balancebillede.webp", "src/img/front_page_card_images/aboutbillede.webp"];
-const lillebillede =[]
-
-const titles = ["Mixed media", "Life Circles", "Installations", "About"];
-const subtitles = ["Collage", "2014", "Balance Me Balance Us", "Christina Winsløw"];
-
-const workCards = titles.map((title, index) => ({
-  workCardImage: cardImages[index],
-  workCardTitle: titles[index],
-  workCardSubtitle: subtitles[index],
-}));
+const {data} = Astro.props
 ---
 
-<div class="container work-cards-container">
-  { workCards.map((workCard, index) => (
-      <div class="card work-card" id="work_card">
+<article>
+  <div>
+    <h3>{data.title}</h3>
+    <p>{data.subtitles}</p>
+<img class = "lillebillede" src={data.lillebillede} alt={data.lillebillede}>
+  </div>
+  <img src={data.cardImages} alt={data.cardImages}>
+</article>
+
+<style>
+
+
+  article{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  div{
+    display: grid;
+  }
+
+  .lillebillede {
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  h3{
+    font-size: 2.2rem;
+    padding: 10px;
+  }
+
+  p{
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+
+
+@media (min. 768px){
+  
+  div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lillebillede {
+    width: 50%;
+    
+  }
+
+  h3{
+    font-size: 1rem;
+  }
+
+  p{
+    font-size: 0xs.8rem;
+  }
+
+}
+
+</style>
+
+
+
+
+
+
+<!-- <div class="container work-cards-container">
+  { workCards.map((workCard, index) => {
+    return  <div class="card work-card" id="work_card">
         <img src={workCard.workCardImage} alt={workCard.workCardImage} />
-        <div class="container titles-container">
+        <div class="titles-container">
           <h3 class="title" id="title">
             {workCard.workCardTitle}
           </h3>
@@ -27,7 +83,7 @@ const workCards = titles.map((title, index) => ({
           </p>
 
           <div class="lillebillede">
-            <img src="" alt="">
+            <img src={workCard.lillebillede} alt="lillebillede">
             
             </div>
 
@@ -41,8 +97,8 @@ const workCards = titles.map((title, index) => ({
             )}
           </div>
         </div>
-      </div>
-    ))
+      </div>}
+    )
   }
 </div>
 
@@ -50,8 +106,8 @@ const workCards = titles.map((title, index) => ({
 
 
 
-.work-cards-container {
- 
+.lillebillede{
+   width: 50%;
 }
   
 
@@ -129,5 +185,11 @@ const workCards = titles.map((title, index) => ({
     .titles-container {
       padding: 20px 30px;
     }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
+ -->

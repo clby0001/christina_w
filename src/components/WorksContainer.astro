@@ -1,12 +1,47 @@
 ---
 import WorkCards from "./WorkCards.astro";
+
+const cardImages = ["src/img/front_page_card_images/mixedmedia.webp", "src/img/front_page_card_images/lifecircles.webp", "src/img/front_page_card_images/balancebillede.webp", "src/img/front_page_card_images/aboutbillede.webp"];
+const lillebillede =["billeder/multismall.png","billeder/circlesmall.png", "billeder/installsmall.png" ]
+
+const titles = ["Mixed media", "Life Circles", "Installations", "About"];
+const subtitles = ["Collage", "2014", "Balance Me Balance Us", "Christina Winsløw"];
+
+const data =[
+  {
+    cardImages:"/src/img/front_page_card_images/mixedmedia.webp",
+    lillebillede:"/billeder/multismall.png",
+    title:"Mixed media",
+    subtitles:"Collage",
+  },
+  {
+    cardImages:"/src/img/front_page_card_images/lifecircles.webp",
+    lillebillede:"/billeder/circlesmall.png",
+    title:"Life Circles",
+    subtitles:"2014",
+  },
+  {
+    cardImages:"/src/img/front_page_card_images/balancebillede.webp",
+    lillebillede:"/billeder/installsmall.png",
+    title:"Installations",
+    subtitles:"Balance Me Balance Us",
+  },
+  {
+    cardImages:"src/img/front_page_card_images/aboutbillede.webp",
+    title:"About",
+    subtitles:"Christina Winsløw",
+  }
+]
 ---
 
 <div class="container work-cards-container">
   <header>
     <h1>Explore My Works</h1>
   </header>
-  <WorkCards />
+  {data.map(((card)=>{
+    return  <WorkCards data={card} />
+  }))}
+ 
 </div>
 
 <style>
