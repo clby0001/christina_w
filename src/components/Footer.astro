@@ -1,125 +1,149 @@
 <footer class="footer" id="footer">
-    <div class="left-side">
-        <div class="contact">
-            <h4>Contact</h4>
-            <ul>
-                <li>
-                    <a href="mailto:christina@mail.dk">christina@mail.dk</a>
-                </li>
-                <li>
-                    <a href="tel:20202020">+45 20 20 20 20</a>
-                </li>
-            </ul>
-        </div>
-        <div class="help">
-            <h4>Help</h4>
-            <ul>
-                <li>
-                    <a href="#">Terms &amp; Conditions</a>
-                </li>
-                <li>
-                    <a href="#">Privacy Policy</a>
-                </li>
-            </ul>
-        </div>
+    <div class="contact">
+        <h4>Contact</h4>
+        <ul>
+            <li>
+                <a href="mailto:christina@mail.dk">christina@mail.dk</a>
+            </li>
+            <li>
+                <a href="tel:20202020">+45 20 20 20 20</a>
+            </li>
+        </ul>
+    </div>
+    <div class="help">
+        <h4>Help</h4>
+        <ul>
+            <li>
+                <a href="#">Terms &amp; Conditions</a>
+            </li>
+            <li>
+                <a href="#">Privacy Policy</a>
+            </li>
+        </ul>
+    </div>
+   <div class="footer-right">
+        <img src="billeder/logofooter.png" class="logo" alt="Logo">
         <div class="socials">
             <ul>
                 <li>
-                    <a href="#"><a href="https://www.facebook.com/din-facebook-side" target="_blank">
-          <img src="public/billeder/icons8-facebook-3.svg" alt="Facebook" />
-        </a></a>
+                    <a href="https://www.facebook.com/din-facebook-side" target="_blank">
+                        <img src="public/billeder/icons8-facebook-3.svg" alt="Facebook" />
+                    </a>
                 </li>
                 <li>
-                    <a href="#"> <a href="https://www.instagram.com/christinawinslov/" target="_blank">
-          <img src="public/billeder/icons8-instagram-2.svg" alt="Instagram" />
-        </a></a>
+                    <a href="https://www.instagram.com/christinawinslov/" target="_blank">
+                        <img src="public/billeder/icons8-instagram-2.svg" alt="Instagram" />
+                    </a>
                 </li>
             </ul>
         </div>
-    </div>
-
-    <div class="right-side">
-        <img src="src/imgs/hero/hero_bg.jpg" class="logo">
-    </div>
 </footer>
 
 <style>
-    footer
-    {
-        position: relative;
-        height: 350px;
-        background-color: #E7D9D9;
-        padding: 20px;
-    }
 
-    footer h1, h2, h3, h4, h5, h6 {
-      font-family: 'Karla', sans-serif;
-    }
+    /* Basisstyling for mobilvisning */
+.footer {
+    background-color: #E7D9D9;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
 
-    footer p, ul, a {
-      font-family: 'Helvetica', sans-serif;
-    }
+.footer h4 {
+    margin-bottom: 13px;
+    font-size: 21px;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 12px;
+}
+
+.footer .socials{
+    padding: 10px;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.footer .contact, .footer .help, .footer .socials {
+    margin-bottom: 20px;
+}
+
+.footer .contact, .footer .help{
+    margin-top: 10px;
+}
 
 
-    footer a:hover
-    {
-        border-bottom: 1px solid #000;
-    }
+.footer .socials ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+ 
+}
 
-    footer .left-side .contact h4,
-    footer .left-side .help h4
-    {
-        margin-bottom: 20px;
-    }
+.footer .socials ul li {
+    display: inline-block;
+}
 
-    footer .left-side .contact a,
-    footer .left-side .help a
-    {
-        margin-bottom: 10px;
-        color: #000;
-    }
+.footer .socials ul li img {
+    width: 45px;
+    height: 45px;
+}
 
-    footer .left-side .help
-    {
-       margin-top: 40px;
-    }
+.footer .logo {
+    width: 100px;
+    margin-top: 5px;
+}
 
-    .socials ul
-    {
-        position: absolute;
+/* Styling for tablets og større skærme */
+@media (min-width: 768px) {
+     .footer {
         display: flex;
-        gap: 10px;
-        bottom: 20px;
-    }
-    footer .logo
-    {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-        height: 100px;
-        width: 100px;
-        border-radius: 100%;
-        object-fit: cover;
+        justify-content: space-between;
+        text-align: left;
     }
 
-    ul{
-      text-align:;
+    .footer .contact, .footer .help {
+        width: 30%;
+        margin-bottom: 0;
+    }
+
+    .footer .socials, .footer .logo {
+        width: auto;
+        text-align: right;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .footer .socials ul {
+        justify-content: flex-start;
+    }
+
+    .footer .logo {
+        width: 150px;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 
 
-    @media (min-width: 1200px){
-   .contact {
-            align-self: flex-start;
-        }
+    .footer .socials{
+    margin-right: 3px;
+}
+}
 
-        .help {
-            align-self: center;
-        }
 
-        .socials {
-            align-self: flex-end;
-        }
-    }
 
 </style>
-
