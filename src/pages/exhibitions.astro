@@ -5,7 +5,11 @@ import Footer from '../components/Footer.astro';
 import ExhibitionsCard from '../components/ExhibitionsCard.astro';
 ---
 <Layout title="Something" >
-   
+
+ 
+        <h1 class="udstillinger">EXHIBITIONS</h1>
+
+   <div>
     <ExhibitionsCard
  imageSrc="/public/billeder/circleofnature.png"
             title1="UPCOMING" 
@@ -21,7 +25,8 @@ import ExhibitionsCard from '../components/ExhibitionsCard.astro';
             title="Look forward to exploring a diverse collection of artworks, including mixed media collages, female body maps, and life circles, when you visit Galleri Malou Karberg at Præstemosevej 27 in Fredensborg."
             date="September 21-24, 2023"
             address="Præstemosevej 27 3480 Fredensborg"
-              color="pink"/>
+              color="pink"
+              reverse="reverse"/>
       <ExhibitionsCard
  imageSrc="/public/billeder/studiov50.png"
             title1="PREVIOUS" 
@@ -31,7 +36,25 @@ import ExhibitionsCard from '../components/ExhibitionsCard.astro';
             address="Vesterbrogade 50, 1 sal"
 
                   color="beige"/>
+                  </div>
 
               <Footer/>
 
 </Layout>
+
+
+<style>
+    div{
+  scroll-snap-type: y mandatory;
+      height: 100svh;
+        overflow: auto;
+    }
+
+    .udstillinger{
+    text-align: center; 
+    font-size: 36px;
+    color: #333; 
+    padding: 20px; 
+     margin: 40px 0; 
+}
+</style>
