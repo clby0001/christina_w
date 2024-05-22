@@ -17,10 +17,14 @@ const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksam
   <h1>SHOP</h1>
   <section class="shop">
     {
-      data.map((shop) => {
-        return <ProductCard data={shop} />;
+      data.map((shop, index) => {
+        // Tilføj en CSS-klasse til de første seks kort for at vise dem
+        const className = index < 6 ? "product-card visible" : "product-card hidden";
+        return <ProductCard data={shop} className={className} />;
       })
     }
+
+    <button class="read-more-button">Se mere</button>
   </section>
 </Layout>
 <Footer />
@@ -30,4 +34,43 @@ const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksam
     padding-top: 7rem;
     text-align: center;
   }
+
+  .read-more-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .read-more-button:hover {
+    background-color: #0056b3;
+  }
+
+  .product-card.hidden {
+    display: none;
+  }
 </style>
+
+<script>
+  // Funktion til at vise de skjulte kort
+  function showMoreProducts() {
+    console.log("showMoreProducts function called");
+
+    // Vis de skjulte kort ved at fjerne "hidden" klassen
+    const hiddenProducts = document.querySelectorAll(".product-card.hidden");
+    hiddenProducts.forEach(function (product) {
+      product.classList.remove("hidden");
+    });
+
+    // Skjul "Se mere" knappen, når alle kortene er synlige
+    document.querySelector(".read-more-button").style.display = "none";
+  }
+
+  // Bind funktionen til knappen, når dokumentet er klar
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".read-more-button").addEventListener("click", showMoreProducts);
+  });
+</script>
