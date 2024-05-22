@@ -1,11 +1,11 @@
 ---
 import "../css/style.css";
-const { imageSrc, title1, title2, address, date, title, color } = Astro.props;
+const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro.props;
 ---
 
 
 <div class="exhibition-card"  >
-    <div class=`container ${color}`)>
+    <div class=`container ${color} ${reverse ? 'reverse' : ''}`>
         <img src={imageSrc} alt={title1} style="width: 100%; height: auto;" />
         <div class="text">
             <div class="container4">
@@ -26,14 +26,25 @@ const { imageSrc, title1, title2, address, date, title, color } = Astro.props;
 </div>
 
 <style>
+ 
 .container {
-    justify-content: flex-start; /* Placerer elementerne til venstre */
-    text-align: left; /* Justerer teksten til venstre */
-    padding: 15px;
-    /* background-color: #C6D2D2; */
+    place-content: center; 
+    text-align: left;
 
-
+    width: 100%; 
+    box-sizing: border-box;
+    height: 100svh;
+     padding-left: 15px;
+    padding-right: 15px;
 }
+
+
+img{
+    object-fit: cover;}
+   
+
+
+
 
 .green{
     background-color: #C6D2D2;
@@ -44,8 +55,21 @@ const { imageSrc, title1, title2, address, date, title, color } = Astro.props;
 }
 
 .beige{
-    background-color: #C9BBB8;
+      background-color: #C9BBB8;
 }
+
+.reverse {
+    display: flex; 
+    flex-direction: row-reverse; 
+}
+
+.reverse img {
+    order: 2; 
+}
+
+.reverse .text {
+    order: 1; 
+    text-align: left; }
 
 .container2 {
 
@@ -59,14 +83,13 @@ margin-bottom: 20px;
 
 
 .exhibition-card {
-    margin: 20px 0; /* Tilføjer lidt luft omkring kortet */
-padding-top: 10rem;
+  scroll-snap-align: center;
 }
 
 .text overskrift {
-    font-size: 15px;
+font-size: 15px;
 font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 20px;
+margin-bottom: 20px;
 }
 
 
@@ -74,13 +97,17 @@ font-family: Arial, Helvetica, sans-serif;
 .text underoverskrift {
     font-family: karla;
     font-weight:bold;
-       font-size: 25px;
-       margin-bottom: 10px;
+    font-size: 25px;
+
 
 }
 
 .text description{
     font-family: karla;
+    font-size: 17px; 
+    line-height: 2.6; 
+    margin-bottom: 20px; 
+    display: block;
 
 }
 
@@ -91,6 +118,11 @@ font-family: Arial, Helvetica, sans-serif;
         grid-template-columns: 50% 50%; /* To kolonner: 50% til billedet og 50% til teksten */
         gap: 20px; /* Mellemrum mellem kolonnerne */
         margin-top: 100px;
+    }
+
+     .reverse {
+        grid-template-columns: 50% 50%; /* Behold grid layout på desktop */
+        flex-direction: row; /* Brug almindelig retning */
     }
 
     .exhibition-card {
