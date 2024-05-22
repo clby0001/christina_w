@@ -3,8 +3,8 @@ import WorkCardButton from "./WorkCardButton.astro";
 
 const cardImages = ["src/img/front_page_card_images/mixedmedia.webp", "src/img/front_page_card_images/lifecircles.webp", "src/img/front_page_card_images/balancebillede.webp", "src/img/front_page_card_images/aboutbillede.webp"];
 
-const titles = ["Mixedmedia", "Life Circles", "Installations", "About"];
-const subtitles = ["Collage", "2014", "Balance Me Balance Us", "Hey"];
+const titles = ["Mixed media", "Life Circles", "Installations", "About"];
+const subtitles = ["Collage", "2014", "Balance Me Balance Us", "Christina Winsløw"];
 
 const workCards = titles.map((title, index) => ({
   workCardImage: cardImages[index],
@@ -29,9 +29,9 @@ const workCards = titles.map((title, index) => ({
           <div class="second-subtitle-and-button-container">
             {index % 4 === 3 && (
               <div class="second-subtitle-and-button-container">
-                <p>Hey</p>
+                <p>Christina Winsløv works in her paintings to convey all the universal aspects of life. Christina challenges conventional materials with her working methods..</p>
 
-                <WorkCardButton workCardButtonText="Link" />
+                <WorkCardButton workCardButtonText="READ MORE" />
               </div>
             )}
           </div>
@@ -42,6 +42,12 @@ const workCards = titles.map((title, index) => ({
 </div>
 
 <style>
+
+  .title {
+    font-size: 3rem;
+  } 
+
+  
   .second-subtitle-and-button-container {
     display: flex;
     flex-direction: column;
@@ -65,13 +71,16 @@ const workCards = titles.map((title, index) => ({
   }
 
   .card.work-card .container.titles-container p.subtitle {
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 5px;
   }
 
   .second-subtitle-and-button-container {
     margin: 20px 0;
+
   }
+
+  
 
   @media screen and (min-width: 768px) {
     .second-subtitle-and-button-container {
