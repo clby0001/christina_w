@@ -2,6 +2,7 @@
 import WorkCardButton from "./WorkCardButton.astro";
 
 const cardImages = ["src/img/front_page_card_images/mixedmedia.webp", "src/img/front_page_card_images/lifecircles.webp", "src/img/front_page_card_images/balancebillede.webp", "src/img/front_page_card_images/aboutbillede.webp"];
+const lillebillede =[]
 
 const titles = ["Mixed media", "Life Circles", "Installations", "About"];
 const subtitles = ["Collage", "2014", "Balance Me Balance Us", "Christina Winsløw"];
@@ -14,8 +15,7 @@ const workCards = titles.map((title, index) => ({
 ---
 
 <div class="container work-cards-container">
-  {
-    workCards.map((workCard, index) => (
+  { workCards.map((workCard, index) => (
       <div class="card work-card" id="work_card">
         <img src={workCard.workCardImage} alt={workCard.workCardImage} />
         <div class="container titles-container">
@@ -25,6 +25,11 @@ const workCards = titles.map((title, index) => ({
           <p class="subtitle" id="subtitle">
             {workCard.workCardSubtitle}
           </p>
+
+          <div class="lillebillede">
+            <img src="" alt="">
+            
+            </div>
 
           <div class="second-subtitle-and-button-container">
             {index % 4 === 3 && (
@@ -43,6 +48,13 @@ const workCards = titles.map((title, index) => ({
 
 <style>
 
+
+
+.work-cards-container {
+ 
+}
+  
+
   .title {
     font-size: 3rem;
   } 
@@ -52,9 +64,11 @@ const workCards = titles.map((title, index) => ({
     display: flex;
     flex-direction: column;
   }
-  .card.work-card {
+  .work-card {
     display: flex;
     flex-direction: column;
+     height: 100vh;
+    
   }
 
   .card.work-card:nth-child(odd) .container.titles-container {
@@ -93,7 +107,7 @@ const workCards = titles.map((title, index) => ({
       justify-content: center;
       align-items: start;
       gap: 40px;
-      height: 600px;
+      // height: 600px;
       width: 100vw;
     }
 
