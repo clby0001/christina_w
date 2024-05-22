@@ -2,7 +2,7 @@
 
 :root {
   /*FONT SIZES*/
-  --paragraph-mobile-font-size: 25px;
+  --paragraph-mobile-font-size: 18px;
   /*MOBILE*/
   /* DESKTOP */
   /*FONT WIGHT*/
@@ -36,9 +36,20 @@ h6 {
   font-family: "Karla", sans-serif;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 p {
   font-family: "Helvetica", sans-serif;
   font-size: var(--paragraph-mobile-font-size);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --paragraph-mobile-font-size: 15px; /* Større skriftstørrelse for større skærme */
+  }
 }
 
 img {
