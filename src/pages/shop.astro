@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import ProductCard from "../components/ProductCard.astro";
 import { getDataEntryById } from "astro:content";
+import Buttons from "../components/Buttons.astro";
 
 const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksamenscase?", {
   method: "GET",
@@ -26,9 +27,8 @@ const last = data.slice(4);
         return <ProductCard data={shop} className={className} />;
       })
     }
-
-    <button class="read-more-button">Se mere</button>
   </section>
+  <Buttons variant="primary" size="mobile" className="see-more-buttonmobil">See more</Buttons>
   <section class="shop last hide grid">
     {
       last.map((shop, index) => {
@@ -48,20 +48,6 @@ const last = data.slice(4);
     padding-bottom: 2rem;
   }
 
-  .read-more-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .read-more-button:hover {
-    background-color: #0056b3;
-  }
-
   .hide.grid {
     display: none;
   }
@@ -75,6 +61,9 @@ const last = data.slice(4);
     h1 {
       padding-bottom: 4rem;
     }
+
+    .see-more-button {
+    }
   }
 </style>
 
@@ -87,11 +76,11 @@ const last = data.slice(4);
     document.querySelector(".last").classList.remove("hide");
 
     // Skjul "Se mere" knappen, når alle kortene er synlige
-    document.querySelector(".read-more-button").style.display = "none";
+    document.querySelector(".primary").style.display = "none";
   }
 
   // Bind funktionen til knappen, når dokumentet er klar
   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".read-more-button").addEventListener("click", showMoreProducts);
+    document.querySelector(".primary").addEventListener("click", showMoreProducts);
   });
 </script>
