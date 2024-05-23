@@ -9,47 +9,74 @@ import Footer from "../components/Footer.astro";
     <h1>ALL WORKS</h1>
 
   <div class="image-container">
-    <div>
-        <img src="/public/billeder/allworks/worksmedia1.jpg" alt="Christina w i stol">
-    </div>
-    <div>
-        <img src="/public/billeder/allworks/worksmedia.jpeg" alt="kunst">
-    </div>
+      <div class="image-hover">
+            <img src="/public/billeder/allworks/worksmedia1.jpg" alt="Christina w i stol">
+            <div class="overlay">"Mixed Media"</div>
+        </div>
+        <div class="image-hover">
+            <img src="/public/billeder/allworks/worksmedia.jpeg" alt="kunst">
+            <div class="overlay">"Female Body Map"</div>
+        </div>
 </div>
 
-  <div class="image-container2">
-    <div>
+ <div class="image-container2">
+    <div class="image-hover">
         <img src="/public/billeder/allworks/workscircle2.jpg" alt="cirkel">
+        <div class="overlay">"LifeCircle" Dark rose</div>
     </div>
-    <div>
+    <div class="image-hover">
         <img src="/public/billeder/allworks/workscircle3.jpg" alt="cirkel">
+        <div class="overlay">"LifeCircle" Lavender</div>
     </div>
-    <div>
+    <div class="image-hover">
         <img src="/public/billeder/allworks/workscircle1.jpg" alt="Circle">
+        <div class="overlay">"LifeCircle" Baby pink</div>
     </div>
 </div>
 
-     <div class="grid2">
-      <img src="/public/billeder/allworks/worksmedia2.jpeg" alt="udstilling">
-   
-      <img src="/public/billeder/allworks/worksinst.jpg" alt="udstilling">
-  </div>
-<div>
-      <img src="/public/billeder/allworks/e1.jpeg" alt="udstilling">
+
+ <div class="grid2">
+    <div class="image-hover">
+        <img src="/public/billeder/allworks/worksmedia2.jpeg" alt="udstilling">
+        <div class="overlay">"Mixed Media" & "Black Tusch On Paper"</div>
     </div>
-     <div class="grid2">
-      <img src="/public/billeder/allworks/worksmedia5.jpg" alt="bodymap">
-   
-      <img src="/public/billeder/allworks/worksmedia4.jpg" alt="bodymap">
-  </div>
-<div>
-      <img src="/public/billeder/allworks/e2.jpeg" alt="udstilling">
+    <div class="image-hover">
+        <img src="/public/billeder/allworks/worksinst.jpg" alt="udstilling">
+        <div class="overlay">From the exhibition "Balance Me, Balance Us"</div>
     </div>
-     <div class="grid2">
-      <img src="/public/billeder/allworks/installation1.jpeg" alt="bodymap">
-   
-      <img src="/public/billeder/allworks/workinst3.jpeg" alt="bodymap">
-  </div>
+</div>
+
+<div class="image-hover">
+    <img src="/public/billeder/allworks/e1.jpeg" alt="udstilling">
+    <div class="overlay">From the exhibition "Balance Me, Balance Us"</div>
+</div>
+
+<div class="grid2">
+    <div class="image-hover">
+        <img src="/public/billeder/allworks/worksmedia5.jpg" alt="bodymap">
+        <div class="overlay">"Mixed Media"</div>
+    </div>
+    <div class="image-hover">
+        <img src="/public/billeder/allworks/worksmedia4.jpg" alt="bodymap">
+        <div class="overlay">"Female Bodymap"</div>
+    </div>
+</div>
+
+<div class="image-hover">
+    <img src="/public/billeder/allworks/e2.jpeg" alt="udstilling">
+    <div class="overlay">From the exhibition "Balance Me, Balance Us"</div>
+</div>
+
+<div class="grid2">
+    <div class="image-hover">
+        <img src="/public/billeder/allworks/installation1.jpeg" alt="bodymap">
+        <div class="overlay"> Installation "Circle Of Nature"</div>
+    </div>
+    <div class="image-hover">
+        <img src="/public/billeder/allworks/workinst3.jpeg" alt="bodymap">
+        <div class="overlay">Installation "Circle Of Nature"</div>
+    </div>
+</div>
 
 </Layout>
 <Footer />
@@ -84,17 +111,54 @@ import Footer from "../components/Footer.astro";
     grid-template-columns: 1fr 1fr; 
     gap: 5px; 
     padding-bottom:5px;
+    padding-top: 5px;
 
 }
 .image-container2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     grid-template-rows: auto auto; 
-    gap: 10px; 
+    gap: 5px; 
 }
 
 .image-container2 > div:last-child {
     grid-column: 1 / -1; 
+}
+/*HOVER EFFFEKT BILLEDER*/
+
+.image-hover {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.image-hover img {
+    width: 100%;
+    display: block; /* Fjerner eventuelt ekstra mellemrum under billedet */
+    transition: transform 0.3s ease; /* Blød zoom-effekt */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgb(242, 242, 242, 0.7); 
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: 1.2em; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.image-hover:hover .overlay {
+    opacity: 1;
 }
 
   @media (min-width: 768px) {
