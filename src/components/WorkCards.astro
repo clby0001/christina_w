@@ -1,6 +1,70 @@
 ---
 import WorkCardButton from "./WorkCardButton.astro";
+const { data } = Astro.props;
+---
 
+<article>
+  <div>
+    <h3>{data.title}</h3>
+    <p>{data.subtitles}</p>
+    <img class="lillebillede" src={data.lillebillede} alt="Lille billede" />
+  </div>
+  <img src={data.cardImages} alt="Card billede" />
+</article>
+
+<style>
+  /* Generel styling */
+  article {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+
+  article div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    margin: 10px 0;
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  /* Mobil styling */
+  @media (max-width: 768px) {
+    .lillebillede {
+      display: none;
+    }
+  }
+
+  /* Desktop styling */
+  @media (min-width: 769px) {
+    article {
+      flex-direction: row;
+    }
+
+    article div {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .lillebillede {
+      display: block;
+      max-width: 100px;
+      margin: 10px 0;
+    }
+
+    img[src*="data.cardImages"] {
+      flex: 2;
+    }
+  }
+</style>
+
+<!-- ---
+import WorkCardButton from "./WorkCardButton.astro";
 const { data } = Astro.props;
 ---
 
@@ -12,8 +76,9 @@ const { data } = Astro.props;
   </div>
   <img src={data.cardImages} alt={data.cardImages} />
 </article>
+ -->
 
-<style>
+<!-- <style>
   .lillebillede {
     width: 50%;
     padding-left: 10px;
@@ -38,8 +103,9 @@ const { data } = Astro.props;
       height: 100vh;
     }
     div {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
     }
 
     .lillebillede {
@@ -55,128 +121,4 @@ const { data } = Astro.props;
       font-size: 0xs.8rem;
     }
   }
-</style>
-
-<!-- <div class="container work-cards-container">
-  { workCards.map((workCard, index) => {
-    return  <div class="card work-card" id="work_card">
-        <img src={workCard.workCardImage} alt={workCard.workCardImage} />
-        <div class="titles-container">
-          <h3 class="title" id="title">
-            {workCard.workCardTitle}
-          </h3>
-          <p class="subtitle" id="subtitle">
-            {workCard.workCardSubtitle}
-          </p>
-
-          <div class="lillebillede">
-            <img src={workCard.lillebillede} alt="lillebillede">
-            
-            </div>
-
-          <div class="second-subtitle-and-button-container">
-            {index % 4 === 3 && (
-              <div class="second-subtitle-and-button-container">
-                <p>Christina Winsløv works in her paintings to convey all the universal aspects of life. Christina challenges conventional materials with her working methods..</p>
-
-                <WorkCardButton workCardButtonText="READ MORE" />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>}
-    )
-  }
-</div>
-
-<style>
-
-
-
-.lillebillede{
-   width: 50%;
-}
-  
-
-  .title {
-    font-size: 3rem;
-  } 
-
-  
-  .second-subtitle-and-button-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .work-card {
-    display: flex;
-    flex-direction: column;
-     height: 100vh;
-    
-  }
-
-  .card.work-card:nth-child(odd) .container.titles-container {
-    order: 1;
-    text-align: left;
-  }
-
-  .card.work-card img {
-    margin: 2rem;
-  }
-
-  .card.work-card .container.titles-container {
-    margin-top: 10px;
-  }
-
-  .card.work-card .container.titles-container p.subtitle {
-    font-size: 20px;
-    margin-top: 5px;
-  }
-
-  .second-subtitle-and-button-container {
-    margin: 20px 0;
-
-  }
-
-  
-
-  @media screen and (min-width: 768px) {
-    .second-subtitle-and-button-container {
-      align-items: end;
-    }
-
-    .card.work-card {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: start;
-      gap: 40px;
-      // height: 600px;
-      width: 100vw;
-    }
-
-    .card.work-card img {
-      flex-basis: 50%;
-      object-fit: cover;
-      height: 100%;
-    }
-
-    .card.work-card .container.titles-container {
-      flex-basis: 50%;
-      text-align: right;
-    }
-    .card.work-card:nth-child(odd) .container.titles-container {
-      order: -1;
-      text-align: left;
-    }
-
-    .titles-container {
-      padding: 20px 30px;
-    }
-
-    .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-</style>
- -->
+</style> -->
