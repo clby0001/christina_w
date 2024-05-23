@@ -1,0 +1,39 @@
+---
+const { variant, size } = Astro.props;
+---
+
+<button class={variant + " " + size}><slot /></button>
+
+<style>
+  button {
+    padding: 1rem;
+  }
+
+  .primary {
+    padding: 0.5rem 2rem; /* Tilføj polstring til knappen */
+    background-color: transparent; /* Gennemsigtig baggrundsfarve */
+    color: black; /* Tekstfarve for knappen */
+    border: 1px solid black; /* Ydre streg */
+    cursor: pointer; /* Gør cursoren til en pil, når der holdes over knappen */
+    transition:
+      background-color 0.3s,
+      color 0.3s; /* Tilføj en overgang for en smidig ændring af farver */
+  }
+
+  .primary:hover {
+    background-color: #e7d9d9; /* Baggrundsfarve, når der holdes over */
+    color: black; /* Tekstfarve, når der holdes over */
+  }
+
+  .small {
+    font-size: 1rem;
+  }
+
+  .medium {
+    font: 2rem;
+  }
+
+  .large {
+    font-size: 3rem;
+  }
+</style>

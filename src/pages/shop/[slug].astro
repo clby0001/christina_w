@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
+import Buttons from "../../components/Buttons.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksamenscase?", {
@@ -37,7 +38,7 @@ console.log(myData);
       </div>
       <div class="second-line">
         <h3>{myData.Format} cm.</h3>
-        <button class="buy-button">Køb nu</button>
+        <Buttons variant="primary" size="small">Buy now</Buttons>
       </div>
       <h4>Description</h4>
       <p>{myData.Description}</p>
@@ -112,22 +113,6 @@ console.log(myData);
     margin-bottom: 1rem; /* Tilføj lidt afstand under hver afsnit */
     text-align: left;
     padding: 1 0.5rem 1rem;
-  }
-
-  .buy-button {
-    padding: 0.5rem 2rem; /* Tilføj polstring til knappen */
-    background-color: transparent; /* Gennemsigtig baggrundsfarve */
-    color: black; /* Tekstfarve for knappen */
-    border: 1px solid black; /* Ydre streg */
-    cursor: pointer; /* Gør cursoren til en pil, når der holdes over knappen */
-    transition:
-      background-color 0.3s,
-      color 0.3s; /* Tilføj en overgang for en smidig ændring af farver */
-  }
-
-  .buy-button:hover {
-    background-color: #e7d9d9; /* Baggrundsfarve, når der holdes over */
-    color: black; /* Tekstfarve, når der holdes over */
   }
 
   @media (min-width: 768px) {
