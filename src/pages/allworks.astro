@@ -1,0 +1,116 @@
+---
+import "../css/style.css";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+---
+<Layout>
+
+  <div class="sektion_body">
+    <h1>ALL WORKS</h1>
+
+  <div class="image-container">
+    <div>
+        <img src="/public/billeder/allworks/worksmedia1.jpg" alt="Christina w i stol">
+    </div>
+    <div>
+        <img src="/public/billeder/allworks/worksmedia.jpeg" alt="kunst">
+    </div>
+</div>
+
+  <div class="image-container2">
+    <div>
+        <img src="/public/billeder/allworks/workscircle2.jpg" alt="cirkel">
+    </div>
+    <div>
+        <img src="/public/billeder/allworks/workscircle3.jpg" alt="cirkel">
+    </div>
+    <div>
+        <img src="/public/billeder/allworks/workscircle1.jpg" alt="Circle">
+    </div>
+</div>
+
+     <div class="grid2">
+      <img src="/public/billeder/allworks/worksmedia2.jpeg" alt="udstilling">
+   
+      <img src="/public/billeder/allworks/worksinst.jpg" alt="udstilling">
+  </div>
+<div>
+      <img src="/public/billeder/allworks/e1.jpeg" alt="udstilling">
+    </div>
+     <div class="grid2">
+      <img src="/public/billeder/allworks/worksmedia5.jpg" alt="bodymap">
+   
+      <img src="/public/billeder/allworks/worksmedia4.jpg" alt="bodymap">
+  </div>
+<div>
+      <img src="/public/billeder/allworks/e2.jpeg" alt="udstilling">
+    </div>
+     <div class="grid2">
+      <img src="/public/billeder/allworks/installation1.jpeg" alt="bodymap">
+   
+      <img src="/public/billeder/allworks/workinst3.jpeg" alt="bodymap">
+  </div>
+
+</Layout>
+<Footer />
+
+<style>
+  h1 {
+    padding-top: 6rem;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+  h2 {
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-align: left;
+  }
+
+  .sektion_body {
+    margin: 2rem;
+    display: grid;
+    place-items: center;
+    text-align: center;
+  }
+
+  .sektion_body h2 {
+    justify-self: start; 
+    align-self: start; 
+    text-align: left; 
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 5px; 
+    padding-bottom:5px;
+
+}
+.image-container2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto auto; 
+    gap: 10px; 
+}
+
+.image-container2 > div:last-child {
+    grid-column: 1 / -1; 
+}
+
+  @media (min-width: 768px) {
+   .image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 5px; 
+    padding-bottom:5px;
+
+   }
+     .image-container2 {
+        display: flex; 
+        justify-content: space-between; 
+    }
+    .image-container2 > div {
+        flex: 1; 
+    }
+  }
+</style>
