@@ -4,7 +4,7 @@ const { data } = Astro.props;
 console.log(data);
 ---
 
-<div class="grid-container">
+<article>
   <a href={`shop/${data.slug}`} class="product-card">
     <img src={data.Image} alt="Product Image" />
     <div class="text-container">
@@ -12,7 +12,7 @@ console.log(data);
       <h2>DKK {data.Price},-</h2>
     </div>
   </a>
-</div>
+</article>
 
 <style>
   /* Generel styling */
@@ -43,13 +43,5 @@ console.log(data);
     margin: 0; /* Fjerner margin for at sikre teksten står i en lige række */
     font-size: 1rem; /* Justerer tekststørrelsen */
     color: #333; /* Farver teksten */
-  }
-
-  /* Desktop-styling */
-  @media (min-width: 768px) {
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* To kolonner på desktop */
-    }
   }
 </style>

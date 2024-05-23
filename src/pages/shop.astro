@@ -18,7 +18,7 @@ const last = data.slice(4);
 
 <Layout title="Something">
   <h1>SHOP</h1>
-  <section class="shop first">
+  <section class="shop first grid">
     {
       first.map((shop, index) => {
         // Tilføj en CSS-klasse til de første seks kort for at vise dem
@@ -29,7 +29,7 @@ const last = data.slice(4);
 
     <button class="read-more-button">Se mere</button>
   </section>
-  <section class="shop last hide">
+  <section class="shop last hide grid">
     {
       last.map((shop, index) => {
         // Tilføj en CSS-klasse til de første seks kort for at vise dem
@@ -61,8 +61,15 @@ const last = data.slice(4);
     background-color: #0056b3;
   }
 
-  .hide {
+  .hide.grid {
     display: none;
+  }
+  /* Desktop-styling */
+  @media (min-width: 768px) {
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* To kolonner på desktop */
+    }
   }
 </style>
 
