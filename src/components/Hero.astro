@@ -4,6 +4,7 @@ import Header from "./Header.astro";
 
 <div class="hero" id="hero">
   <img src="src/img/forsidebillede.jpg" alt="" />
+  <div class="scroll-down" id="scroll-down"></div>
 </div>
 
 <style>
@@ -20,4 +21,33 @@ import Header from "./Header.astro";
     width: 100%;
     object-fit: cover;
   }
+
+  .scroll-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    top: 710px;
+  }
+
+  .scroll-down::after {
+    content: "";
+    position: absolute;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    left: -6px;
+    top: -6px;
+  }
 </style>
+
+<script>
+  document.getElementById("scroll-down").addEventListener("click", function () {
+    document.getElementById("next-section").scrollIntoView({ behavior: "smooth" });
+  });
+</script>
