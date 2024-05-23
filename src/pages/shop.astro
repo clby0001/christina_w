@@ -11,13 +11,16 @@ const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksam
     apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ4eGprbnRlcWtoc2podGltampjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU5NDAyODcsImV4cCI6MjAzMTUxNjI4N30.m9y52VCukhWnKC_k4PCgWlz1mVReietqdz4j0V_C9sg",
   },
 }).then((response) => response.json());
+
+const first = data.slice(0, 4);
+const last = data.slice(4);
 ---
 
 <Layout title="Something">
   <h1>SHOP</h1>
-  <section class="shop">
+  <section class="shop first">
     {
-      data.map((shop, index) => {
+      first.map((shop, index) => {
         // Tilføj en CSS-klasse til de første seks kort for at vise dem
         const className = index < 6 ? "product-card visible" : "product-card hidden";
         return <ProductCard data={shop} className={className} />;
@@ -25,6 +28,15 @@ const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksam
     }
 
     <button class="read-more-button">Se mere</button>
+  </section>
+  <section class="shop last hide">
+    {
+      last.map((shop, index) => {
+        // Tilføj en CSS-klasse til de første seks kort for at vise dem
+        const className = index < 6 ? "product-card visible" : "product-card hidden";
+        return <ProductCard data={shop} className={className} />;
+      })
+    }
   </section>
 </Layout>
 <Footer />
@@ -49,7 +61,7 @@ const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksam
     background-color: #0056b3;
   }
 
-  .product-card.hidden {
+  .hide {
     display: none;
   }
 </style>
@@ -60,10 +72,7 @@ const data = await fetch("https://fxxjknteqkhsjhtimjjc.supabase.co/rest/v1/eksam
     console.log("showMoreProducts function called");
 
     // Vis de skjulte kort ved at fjerne "hidden" klassen
-    const hiddenProducts = document.querySelectorAll(".product-card.hidden");
-    hiddenProducts.forEach(function (product) {
-      product.classList.remove("hidden");
-    });
+    document.querySelector(".last").classList.remove("hide");
 
     // Skjul "Se mere" knappen, når alle kortene er synlige
     document.querySelector(".read-more-button").style.display = "none";
