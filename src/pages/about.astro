@@ -13,59 +13,63 @@ import Footer from "../components/Footer.astro";
     <img src="/public/billeder/aboutchristina.png" alt="" />
 
     <h2>Glimpse of Christina Winsløw</h2>
-
-    <video src="" controls></video>
   </div>
+  <div class="youtube">
+    <div class="video">
+      <iframe width="660" height="475" src="https://www.youtube.com/embed/UWc0ov1E2fU?si=VkHc3B5Qhm0D_ZH1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
-  <Footer />
+    <style>
+      h1 {
+        padding-top: 6rem;
+        text-align: center;
+        padding-bottom: 2rem;
+      }
+      h2 {
+        display: block;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        text-align: left;
+      }
+
+      .sektion_body {
+        margin: 2rem;
+        display: grid;
+        place-items: center;
+        text-align: center;
+      }
+      .youtube {
+        align-self: center;
+        margin-bottom: 40px;
+      }
+
+      .sektion_body h2 {
+        justify-self: start; /* Justerer vandret placering til venstre */
+        align-self: start; /* Justerer lodret placering til start (top) */
+        text-align: left; /* Venstrejuster tekst */
+      }
+      p {
+        text-align: left; /* Venstrejuster tekst */
+        justify-self: center; /* Centrerer vandret placering */
+        padding-bottom: 2rem;
+        white-space: pre-line;
+      }
+
+      .static {
+        position: absolute;
+      }
+
+      @media (min-width: 768px) {
+        p {
+          text-align: left; /* Venstrejuster tekst */
+          max-width: 950px; /* Juster bredden efter behov */
+          margin: 0 auto; /* Centrer elementet ved at angive en automatisk margen */
+          padding-bottom: 2rem;
+        }
+      }
+    </style>
+  </div>
 </Layout>
-
-<style>
-  h1 {
-    padding-top: 6rem;
-    text-align: center;
-    padding-bottom: 2rem;
-  }
-  h2 {
-    display: block;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    text-align: left;
-  }
-
-  .sektion_body {
-    margin: 2rem;
-    display: grid;
-    place-items: center;
-    text-align: center;
-  }
-
-  .sektion_body h2 {
-    justify-self: start; /* Justerer vandret placering til venstre */
-    align-self: start; /* Justerer lodret placering til start (top) */
-    text-align: left; /* Venstrejuster tekst */
-  }
-  p {
-    text-align: left; /* Venstrejuster tekst */
-    justify-self: center; /* Centrerer vandret placering */
-    padding-bottom: 2rem;
-    white-space: pre-line;
-  }
-
-  .static {
-    position: absolute;
-  }
-
-  video {
-    width: 100%;
-  }
-
-  @media (min-width: 768px) {
-    p {
-      text-align: left; /* Venstrejuster tekst */
-      max-width: 950px; /* Juster bredden efter behov */
-      margin: 0 auto; /* Centrer elementet ved at angive en automatisk margen */
-      padding-bottom: 2rem;
-    }
-  }
-</style>
+<div>
+  <Footer />
+</div>
