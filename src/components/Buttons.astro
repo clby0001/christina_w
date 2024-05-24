@@ -7,6 +7,7 @@ const { variant, size } = Astro.props;
 <style>
   button {
     padding: 1rem;
+    margin-bottom: 3rem;
   }
 
   .primary {
@@ -25,19 +26,17 @@ const { variant, size } = Astro.props;
     color: black; /* Tekstfarve, når der holdes over */
   }
 
-  .desktop {
-    font-size: 1rem;
-  }
-
-  .mobile {
+  .all {
     font-size: 1rem;
     margin-left: 10rem;
     margin-right: 10rem;
+    align-self: center;
   }
 
   @media (min-width: 768px) {
-    .desktop {
+    .all {
       font-size: 1rem;
+      width: fit-content;
     }
   }
 </style>
