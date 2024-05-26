@@ -9,7 +9,10 @@ const { data } = Astro.props;
     <p>{data.subtitles}</p>
     <img class="lillebillede" src={data.lillebillede} alt="Lille billede" />
   </div>
-  <img src={data.cardImages} alt="Card billede" />
+  <div>
+    <img src={data.cardImages} alt="Card billede" />
+  </div>
+  
 </article>
 
 <style>
@@ -46,8 +49,8 @@ const { data } = Astro.props;
       flex-direction: row;
     }
 
-    article div {
-      flex: 1;
+    article>div {
+      width: 50%;
       margin-right: 20px;
     }
 
