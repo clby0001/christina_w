@@ -9,20 +9,32 @@ const { data } = Astro.props;
     <p>{data.subtitles}</p>
     <img class="lillebillede" src={data.lillebillede} alt="Lille billede" />
   </div>
-  <img src={data.cardImages} alt="Card billede" />
+  <img src={data.cardImages} class="stort-billede" alt="Card billede" />
 </article>
 
 <style>
-  /* Generel styling */
   article {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    width: 100%;
   }
 
   article div {
-    display: flex;
-    flex-direction: column;
+    order: 1;
+    justify-content: end;
+  }
+
+  article:nth-child(odd) div {
+    margin-right: 50px;
+    justify-content: end;
+    order: 1;
+  }
+
+  article img.stort-billede {
+    height: 600px;
+    width: 50%;
+    object-fit: cover;
   }
 
   h3 {
@@ -49,6 +61,17 @@ const { data } = Astro.props;
     article div {
       flex: 1;
       margin-right: 20px;
+    }
+
+    article div {
+      display: flex;
+      flex-direction: column;
+      align-self: start;
+      order: -1;
+    }
+
+    article:nth-child(even) div {
+      order: -1;
     }
 
     .lillebillede {
