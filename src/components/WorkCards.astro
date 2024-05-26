@@ -12,20 +12,31 @@ const { data } = Astro.props;
   <div>
     <img src={data.cardImages} alt="Card billede" />
   </div>
-  
 </article>
 
 <style>
-  /* Generel styling */
   article {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    width: 100%;
   }
 
   article div {
-    display: flex;
-    flex-direction: column;
+    order: 1;
+    justify-content: end;
+  }
+
+  article:nth-child(odd) div {
+    margin-right: 50px;
+    justify-content: end;
+    order: 1;
+  }
+
+  article img.stort-billede {
+    height: 600px;
+    width: 50%;
+    object-fit: cover;
   }
 
   h3 {
@@ -49,9 +60,20 @@ const { data } = Astro.props;
       flex-direction: row;
     }
 
-    article>div {
+    article > div {
       width: 50%;
       margin-right: 20px;
+    }
+
+    article div {
+      display: flex;
+      flex-direction: column;
+      align-self: start;
+      order: -1;
+    }
+
+    article:nth-child(even) div {
+      order: -1;
     }
 
     .lillebillede {
