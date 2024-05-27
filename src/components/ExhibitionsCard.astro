@@ -4,10 +4,8 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
 ---
 
 <div class="exhibition-card">
-  <!-- <div class=`container ${color} ${reverse ? 'reverse' : ''}`>   -->
-  <div class=`container ${color} `>
-    <div class=`imagecontainer ` style=`background-image: url(${imageSrc})`></div>
-    <!-- <img src={imageSrc} alt={title1} style="width: 100%; height: auto;" /> -->
+  <div class={`container ${color} ${reverse ? "reverse" : ""}`}>
+    <div class="imagecontainer" style={`background-image: url(${imageSrc})`}></div>
     <div class="text">
       <div class="textspace">
         <div class="container4">
@@ -32,7 +30,6 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
   .container {
     place-content: center;
     text-align: left;
-
     width: 100%;
     box-sizing: border-box;
     height: 100svh;
@@ -117,22 +114,20 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
       justify-content: space-between;
     }
     .container {
-      display: grid; /* Ændrer layoutet til grid på desktop */
-      grid-template-columns: 50% 50%; /* To kolonner: 50% til billedet og 50% til teksten */
-      gap: 20px; /* Mellemrum mellem kolonnerne */
-      /* margin-top: 100px; */
+      display: grid;
+      grid-template-columns: 50% 50%;
+      gap: 20px;
     }
 
     .reverse {
-      grid-template-columns: 50% 50%; /* Behold grid layout på desktop */
-      flex-direction: row; /* Brug almindelig retning */
+      grid-template-columns: 50% 50%;
+      flex-direction: row;
     }
 
     .exhibition-card {
-      padding-top: 0; /* Fjerner toppadding på desktop */
+      padding-top: 0;
     }
     .container3 {
-      /* margin-bottom: 300px; */
     }
 
     .container4 {
