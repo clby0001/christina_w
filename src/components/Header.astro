@@ -31,6 +31,7 @@ import "../css/style.css";
     </div>
   </div>
 </nav>
+
 <style>
   nav {
     display: flex;
@@ -62,7 +63,7 @@ import "../css/style.css";
   }
   .logo {
     display: flex;
-    align-items: center; /* Centrer lodret */
+    align-items: center; 
   }
 
   .menu.active {
@@ -70,7 +71,7 @@ import "../css/style.css";
     flex-direction: column;
     align-items: center;
     background-color: #f5f5f5;
-    position: absolute; /* Eller 'fixed' afhængigt af dit design */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
@@ -143,6 +144,11 @@ import "../css/style.css";
     transition: all 0.2s linear;
   }
 
+  /* Active link underline style */
+  .menu a.active {
+    border-bottom: 2px solid black;
+  }
+
   /*DESKTOP*/
   @media screen and (min-width: 768px) {
     .menu {
@@ -203,6 +209,16 @@ import "../css/style.css";
     const dropdown = document.querySelector(".dropdown");
     const dropdownMenu = document.querySelector(".dropdown-menu");
 
+    // funktionen til at sætte aktivt link baseret på URL
+    const setActiveLink = () => {
+      const currentPath = window.location.pathname;
+      links.forEach((link) => {
+        if (link.getAttribute("href") === currentPath) {
+          link.classList.add("active");
+        }
+      });
+    };
+
     burger.addEventListener("click", () => {
       burger.classList.toggle("active");
       menu.classList.toggle("active");
@@ -218,5 +234,9 @@ import "../css/style.css";
         dropdownMenu.classList.remove("active");
       });
     });
+
+    // Kald funktionen setActiveLink, når DOM er indlæst
+    setActiveLink();
   });
 </script>
+
