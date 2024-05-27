@@ -10,7 +10,7 @@ import Footer from "../components/Footer.astro";
 
     <p>In my art, I focus on conveying all the universal facets of life. I challenge conventional materials with my working methods, often blending delicate drawn expressions with paint and spray. Thus, the works exude an atmosphere of dreamy infinity. An aesthetic union and a very special sensuality. I think a lot about sustainability in connection with my art, including through my choice of materials. I create my art using materials that already exist, and materials I find in nature and places I visit, such as recycling centers. My approach to work is very intuitive; I take many photos and write notes that inspire me and which I use when creating art.</p>
 
-    <img class="billede" src="/public/billeder/aboutchristina.png" alt="" />
+    <img src="/public/billeder/aboutchristina.png" alt="" />
 
     <h2>Glimpse of Christina Winsløw</h2>
   </div>
@@ -20,10 +20,6 @@ import Footer from "../components/Footer.astro";
     </div>
 
     <style>
-      .billede {
-        margin-bottom: 50px;
-      }
-
       h1 {
         padding-top: 6rem;
         text-align: center;
@@ -48,14 +44,15 @@ import Footer from "../components/Footer.astro";
       }
 
       .sektion_body h2 {
-        text-align: center; /* Venstrejuster tekst */
+        justify-self: start; /* Justerer vandret placering til venstre */
+        align-self: start; /* Justerer lodret placering til start (top) */
+        text-align: left; /* Venstrejuster tekst */
       }
       p {
         text-align: left; /* Venstrejuster tekst */
         justify-self: center; /* Centrerer vandret placering */
         padding-bottom: 2rem;
         white-space: pre-line;
-        line-height: 1.7rem;
       }
 
       .static {
