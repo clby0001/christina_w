@@ -34,7 +34,12 @@ const { img1, img2, img3, img4, img5, img6 } = Astro.props;
     min-width: 100%;
     min-height: 100%;
     text-align: center;
-    font-size: 2em;
+  }
+
+  .img img {
+    width: 700px; /* Sæt den ønskede bredde */
+    height: 500px; /* Sæt den ønskede højde */
+    object-fit: cover; /* Sikrer at billedet fylder hele området uden forvrængning */
   }
 
   .carousel-button {
@@ -87,14 +92,4 @@ const { img1, img2, img3, img4, img5, img6 } = Astro.props;
       moveToItem(items.length - 1);
     }
   });
-
-  const autoScroll = () => {
-    if (currentIndex < items.length - 1) {
-      moveToItem(currentIndex + 1);
-    } else {
-      moveToItem(0);
-    }
-  };
-
-  setInterval(autoScroll, 3000); // Skift slide hver 3. sekund
 </script>
