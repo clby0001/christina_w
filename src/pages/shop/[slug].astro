@@ -48,12 +48,8 @@ console.log(myData);
 </Layout>
 
 <script>
-  // Vælg knappen
   const buyButton = document.querySelector(".buy-button");
-
-  // Tilføj eventlistener til knappen
   buyButton.addEventListener("click", function () {
-    // Håndter købsklik
     alert("Tak for dit køb!");
   });
 </script>
@@ -62,34 +58,27 @@ console.log(myData);
   .first-line,
   .second-line {
     display: flex;
-    justify-content: space-between; /* Fordeler pladsen ligeligt mellem elementerne */
+    justify-content: space-between;
     width: 100%;
-    padding: 1 0.5rem 1rem; /* Tilføjer lidt indre margin for at centrere teksten bedre */
+    padding: 1 0.5rem 1rem;
   }
 
   .content img {
-    max-width: 100%; /* Sørg for, at billedet ikke overstiger containerens bredde */
-    height: auto; /* Behold billedets proportioner */
-    margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
-    margin-top: 4rem; /* Ryk billedet lidt ned */
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
   }
 
   .content {
-    text-align: center; /* Centrerer indholdet */
-    padding: 2rem; /* Tilføjer polstring omkring indholdet */
-    display: grid; /* Brug CSS-grid til layout */
-    grid-template-columns: 1fr; /* Én kolonne som standard */
-  }
-
-  .content img {
-    max-width: 100%; /* Sørg for, at billedet ikke overstiger containerens bredde */
-    height: auto; /* Behold billedets proportioner */
-    margin-bottom: 1rem; /* Tilføj lidt afstand under billedet */
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .content h1 {
-    font-size: 1.2rem; /* Juster størrelsen af overskriften */
-    margin-bottom: 2rem; /* Tilføj lidt afstand under overskriften */
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
   }
 
   .content h3 {
@@ -104,30 +93,30 @@ console.log(myData);
   }
 
   .content p {
-    font-size: 1rem; /* Juster størrelsen af teksten */
-    margin-bottom: 1rem; /* Tilføj lidt afstand under hver afsnit */
+    font-size: 1rem;
+    margin-bottom: 1rem;
     text-align: left;
     padding: 1 0.5rem 1rem;
   }
 
   @media (min-width: 768px) {
     .content {
-      grid-template-columns: 1fr 1fr; /* To kolonner på desktop */
-      align-items: start; /* Justerer starten af rækkerne */
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
     }
 
     .content img {
-      grid-column: 1 / span 1; /* Billedet spænder over en kolonne */
-      grid-row: 1 / span 2; /* Billedet spænder over to rækker */
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
     }
 
     .first-line,
     .second-line {
-      grid-column: 2 / span 1; /* Tekstspænding over en kolonne */
+      grid-column: 2 / span 1;
     }
 
     .content h4 {
-      grid-column: 1 / span 2; /* Overskriften spænder over to kolonner */
+      grid-column: 1 / span 2;
     }
 
     .text-section {
