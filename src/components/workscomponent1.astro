@@ -1,12 +1,14 @@
 ---
 import "../css/style.css";
-const { text, describtion, imageSrc } = Astro.props;
+const { text, describtion, imageSrc, describtion2, describtion3 } = Astro.props;
 ---
 
 <div class="sektion">
   <div class="component1">
     <h2>{text}</h2>
     <p>{describtion}</p>
+    <p>{describtion2}</p>
+    <p>{describtion3}</p>
   </div>
   <div class="img">
     <div class="img"><img src={imageSrc} /></div>
@@ -31,10 +33,9 @@ const { text, describtion, imageSrc } = Astro.props;
   }
 
   .component1 p {
-    font-size: 1rem;
-    padding-top: 2rem;
+    font-size: 16px;
+    padding-top: 32px;
     line-height: 1.6;
-    padding-bottom: 2rem;
   }
 
   .img img {
