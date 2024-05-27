@@ -22,17 +22,17 @@ const last = data.slice(4);
   <section class="shop first grid">
     {
       first.map((shop, index) => {
-        // Tilføj en CSS-klasse 
+        // Tilføj en CSS-klasse
         const className = index < 6 ? "product-card visible" : "product-card hidden";
         return <ProductCard data={shop} className={className} />;
       })
     }
   </section>
-  <Buttons variant="primary" size="all" className="see-more-buttonmobil">See more</Buttons>
+  <Buttons variant="primary" size="all" className="see-more-buttonmobil">SEE MORE</Buttons>
   <section class="shop last hide grid">
     {
       last.map((shop, index) => {
-        // Tilføj en CSS-klasse 
+        // Tilføj en CSS-klasse
         const className = index < 6 ? "product-card visible" : "product-card hidden";
         return <ProductCard data={shop} className={className} />;
       })
@@ -55,7 +55,7 @@ const last = data.slice(4);
   @media (min-width: 768px) {
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr; 
+      grid-template-columns: 1fr 1fr;
     }
 
     h1 {
