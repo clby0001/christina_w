@@ -22,7 +22,7 @@ const last = data.slice(4);
   <section class="shop first grid">
     {
       first.map((shop, index) => {
-        // Tilføj en CSS-klasse til de første seks kort for at vise dem
+        // Tilføj en CSS-klasse 
         const className = index < 6 ? "product-card visible" : "product-card hidden";
         return <ProductCard data={shop} className={className} />;
       })
@@ -32,7 +32,7 @@ const last = data.slice(4);
   <section class="shop last hide grid">
     {
       last.map((shop, index) => {
-        // Tilføj en CSS-klasse til de første seks kort for at vise dem
+        // Tilføj en CSS-klasse 
         const className = index < 6 ? "product-card visible" : "product-card hidden";
         return <ProductCard data={shop} className={className} />;
       })
@@ -55,7 +55,7 @@ const last = data.slice(4);
   @media (min-width: 768px) {
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr; /* To kolonner på desktop */
+      grid-template-columns: 1fr 1fr; 
     }
 
     h1 {
@@ -79,7 +79,7 @@ const last = data.slice(4);
     document.querySelector(".primary").style.display = "none";
   }
 
-  // Bind funktionen til knappen, når dokumentet er klar
+  // Bind funktionen til knappen
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".primary").addEventListener("click", showMoreProducts);
   });
