@@ -32,7 +32,7 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
     text-align: left;
     width: 100%;
     box-sizing: border-box;
-   padding: 60px;
+    padding: 60px;
   }
 
   .imagecontainer {
@@ -91,10 +91,11 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
   }
 
   .text description {
-    font-family: karla;
-    font-size: 17px;
-    line-height: 2.6;
+    font-family: var(--paragraph-mobile-font-size);
+    font-size: var(--paragraph-mobile-font-size);
+    line-height: 1.5;
     margin-bottom: 20px;
+    margin-top: 20px;
     display: block;
   }
 
@@ -108,10 +109,10 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
       justify-content: space-between;
       margin: 50px;
     }
-     .reverse {
-    display: flex;
-    flex-direction: row-reverse;
-  }
+    .reverse {
+      display: flex;
+      flex-direction: row-reverse;
+    }
     .container {
       display: grid;
       grid-template-columns: 50% 50%;
@@ -133,11 +134,9 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
     }
   }
   @media (max-width: 991px) {
-  .container4 {
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-
-
+    .container4 {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
   }
 </style>
