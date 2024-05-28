@@ -20,7 +20,8 @@ import Footer from "../components/Footer.astro";
         <iframe width="430" height="240" src="https://www.youtube.com/embed/UWc0ov1E2fU?si=VkHc3B5Qhm0D_ZH1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </div>
-
+  </div>
+</Layout>
     <style>
       h1 {
         padding-top: 6rem;
@@ -36,14 +37,20 @@ import Footer from "../components/Footer.astro";
       }
 
       .sektion_body {
-        margin: 2rem;
+        /*margin: 2rem;*/
         display: grid;
         place-items: center;
         text-align: center;
       }
+      .sektion_body img{
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+      
       .youtube {
         align-self: center;
         margin-bottom: 40px;
+        
       }
 
       p {
@@ -51,6 +58,8 @@ import Footer from "../components/Footer.astro";
         justify-self: center;
         padding-bottom: 32px;
         white-space: pre-line;
+        padding-right: 20px;
+        padding-left: 20px;
       }
 
       .underbilledet {
@@ -70,13 +79,12 @@ import Footer from "../components/Footer.astro";
         }
 
         iframe {
-          width: 830px;
+          width: 974px;
           height: 640px;
         }
       }
     </style>
-  </div>
-</Layout>
-<div>
+
+
   <Footer />
-</div>
+
