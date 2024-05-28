@@ -32,9 +32,7 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
     text-align: left;
     width: 100%;
     box-sizing: border-box;
-    height: 100svh;
-    padding-left: 15px;
-    padding-right: 15px;
+   padding: 60px;
   }
 
   .imagecontainer {
@@ -59,11 +57,6 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
 
   .beige {
     background-color: #c9bbb8;
-  }
-
-  .reverse {
-    display: flex;
-    flex-direction: row-reverse;
   }
 
   .reverse .text {
@@ -113,11 +106,15 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      margin: 50px;
     }
+     .reverse {
+    display: flex;
+    flex-direction: row-reverse;
+  }
     .container {
       display: grid;
       grid-template-columns: 50% 50%;
-      gap: 20px;
     }
 
     .reverse {
@@ -134,5 +131,13 @@ const { imageSrc, title1, title2, address, date, title, color, reverse } = Astro
     .container4 {
       margin-bottom: 50px;
     }
+  }
+  @media (max-width: 991px) {
+  .container4 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+
   }
 </style>
