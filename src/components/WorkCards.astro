@@ -27,7 +27,6 @@ const { data } = Astro.props;
   article {
     display: flex;
     flex-direction: column;
-    margin: 20px;
     width: 100%;
     padding-inline: 20px;
   }
@@ -52,16 +51,17 @@ const { data } = Astro.props;
 
   .knapforside {
     font-family: karla;
-    padding: 0.5rem 2rem; 
-    background-color: transparent; 
-    color: black; 
-    border: 1px solid black; 
-    cursor: pointer; 
+    padding: 0.5rem 2rem;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
     transition:
       background-color 0.3s,
       color 0.3s;
     display: inline-block;
     margin-top: 20px;
+    margin-bottom: 3rem;
   }
 
   .knapforside:hover {
