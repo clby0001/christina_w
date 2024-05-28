@@ -8,15 +8,17 @@ import Footer from "../components/Footer.astro";
   <div class="sektion_body">
     <h1>CHRISTINA WINSLØW</h1>
 
-    <p>In my art, I focus on conveying all the universal facets of life. I challenge conventional materials with my working methods, often blending delicate drawn expressions with paint and spray. Thus, the works exude an atmosphere of dreamy infinity. An aesthetic union and a very special sensuality. I think a lot about sustainability in connection with my art, including through my choice of materials. I create my art using materials that already exist, and materials I find in nature and places I visit, such as recycling centers. My approach to work is very intuitive; I take many photos and write notes that inspire me and which I use when creating art.</p>
+    <p>In my art, I focus on conveying all the universal facets of life. I challenge conventional materials with my working methods, often blending delicate drawn expressions with paint and spray. Thus, the works exude an atmosphere of dreamy infinity. An aesthetic union and a very special sensuality.</p>
 
-    <img src="/public/billeder/aboutchristina.png" alt="" />
+    <img src="/public/billeder/aboutchristina.png" class="img" />
+
+    <p class="underbilledet">I think a lot about sustainability in connection with my art, including through my choice of materials. I create my art using materials that already exist, and materials I find in nature and places I visit, such as recycling centers. My approach to work is very intuitive; I take many photos and write notes that inspire me and which I use when creating art.</p>
 
     <h2>Glimpse of Christina Winsløw</h2>
-  </div>
-  <div class="youtube">
-    <div class="video">
-      <iframe width="660" height="475" src="https://www.youtube.com/embed/UWc0ov1E2fU?si=VkHc3B5Qhm0D_ZH1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="youtube">
+      <div class="video">
+        <iframe width="430" height="240" src="https://www.youtube.com/embed/UWc0ov1E2fU?si=VkHc3B5Qhm0D_ZH1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
     </div>
 
     <style>
@@ -29,7 +31,8 @@ import Footer from "../components/Footer.astro";
         display: block;
         padding-top: 32px;
         padding-bottom: 32px;
-        text-align: left;
+        font-style: normal;
+        text-align: center;
       }
 
       .sektion_body {
@@ -43,16 +46,15 @@ import Footer from "../components/Footer.astro";
         margin-bottom: 40px;
       }
 
-      .sektion_body h2 {
-        justify-self: start; 
-        align-self: start; 
-        text-align: left;
-      }
       p {
-        text-align: left; 
-        justify-self: center; 
+        text-align: left;
+        justify-self: center;
         padding-bottom: 32px;
         white-space: pre-line;
+      }
+
+      .underbilledet {
+        padding-top: 32px;
       }
 
       .static {
@@ -61,10 +63,15 @@ import Footer from "../components/Footer.astro";
 
       @media (min-width: 768px) {
         p {
-          text-align: left; 
-          max-width: 950px; 
-          margin: 0 auto; 
+          text-align: left;
+          max-width: 950px;
+          margin: 0 auto;
           padding-bottom: 32px;
+        }
+
+        iframe {
+          width: 830px;
+          height: 640px;
         }
       }
     </style>
