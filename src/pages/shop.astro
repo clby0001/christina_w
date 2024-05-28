@@ -76,7 +76,7 @@ const last = data.slice(4);
     document.querySelector(".last").classList.remove("hide");
 
     // Skjul "Se mere" knappen, når alle kortene er synlige
-    document.querySelector(".primary").style.display = "none";
+    document.querySelector(".primary").classList.add("hide");
   }
 
   // Bind funktionen til knappen
