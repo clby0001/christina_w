@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Karla: 100, 200, 300, 400, 500, 600, 700, 800, 900");
 
-:root {
-  /*FONT SIZES*/
-  --paragraph-mobile-font-size: 18px;
-  /*MOBILE*/
-  /* DESKTOP */
-  /*FONT WIGHT*/
-  /* COLORS */
-  --background-color: #f5f5f5;
-  --text-color: #000;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -27,17 +16,43 @@ body {
   background-color: var(--background-color);
 }
 
+/* Variabler */
+:root {
+  /* FONT SIZES */
+  --paragraph-mobile-font-size: 16px;
+  --paragraph-desktop-font-size: 17px;
+  --header: 32px;
+
+  /* COLORS */
+  --background-color: #f5f5f5;
+  --text-color: #000;
+  --footer-color: #e7d9d9;
+
+  /* FONT FAMILY */
+  --overskrifter: "Karla", sans-serif;
+  --brødtekst: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 h1,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Karla", sans-serif;
+  font-family: var(--overskrifter);
 }
 
 h1 {
-  font-size: 32px;
+  font-size: var(--header);
+  padding-bottom: 3rem;
+  padding-top: 7rem;
+  text-align: center;
 }
+
 h2 {
   font-weight: 900;
   font-family: Arial, Helvetica, sans-serif;
@@ -45,14 +60,14 @@ h2 {
 }
 
 p {
-  font-family: "Helvetica", sans-serif;
+  font-family: var(--brødtekst);
   font-size: var(--paragraph-mobile-font-size);
   line-height: 1.5;
 }
 
 @media (min-width: 768px) {
   :root {
-    --paragraph-mobile-font-size: 15px; /* Større skriftstørrelse for større skærme */
+    --paragraph-mobile-font-size: var(--paragraph-desktop-font-size); /* Skift til desktop-størrelse */
   }
 }
 

@@ -3,181 +3,166 @@ import "../css/style.css";
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 ---
+
 <Layout>
-
+  <h1>ALL WORKS</h1>
   <div class="sektion_body">
-    <h1>ALL WORKS</h1>
-
-  <div class="image-container">
+    <div class="image-container">
       <div class="image-hover">
-            <img src="/billeder/allworks/worksmedia1.jpg" alt="Christina w i stol">
-            <div class="overlay">"Mixed Media"</div>
-        </div>
-        <div class="image-hover">
-            <img src="/billeder/allworks/worksmedia.jpeg" alt="kunst">
-            <div class="overlay">"Female Body Map"</div>
-        </div>
-</div>
-
- <div class="image-container2">
-    <div class="image-hover">
-        <img src="/billeder/allworks/workscircle2.jpg" alt="cirkel">
-        <div class="overlay">"LifeCircle" Dark rose</div>
-    </div>
-    <div class="image-hover">
-        <img src="/billeder/allworks/workscircle3.jpg" alt="cirkel">
-        <div class="overlay">"LifeCircle" Lavender</div>
-    </div>
-    <div class="image-hover">
-        <img src="/billeder/allworks/workscircle1.jpg" alt="Circle">
-        <div class="overlay">"LifeCircle" Baby pink</div>
-    </div>
-</div>
-
-
- <div class="grid2">
-    <div class="image-hover">
-        <img src="/billeder/allworks/worksmedia2.jpeg" alt="udstilling">
-        <div class="overlay">"Mixed Media" & <br> "Black Tusch On Paper"</div>
-    </div>
-    <div class="image-hover">
-        <img src="/billeder/allworks/worksinst.jpg" alt="udstilling">
-        <div class="overlay">From the exhibition <br> "Balance Me, Balance Us"</div>
-    </div>
-</div>
-
-<div class="image-hover">
-    <img src="/billeder/allworks/e1.jpeg" alt="udstilling">
-    <div class="overlay">From the exhibition "Balance Me, Balance Us"</div>
-</div>
-
-<div class="grid2">
-    <div class="image-hover">
-        <img src="/billeder/allworks/worksmedia5.jpg" alt="bodymap">
+        <img src="/billeder/allworks/worksmedia1.jpg" alt="Christina w i stol" />
         <div class="overlay">"Mixed Media"</div>
+      </div>
+      <div class="image-hover">
+        <img src="/billeder/allworks/worksmedia.jpeg" alt="kunst" />
+        <div class="overlay">"Female Body Map"</div>
+      </div>
     </div>
+
+    <div class="image-container2">
+      <div class="image-hover">
+        <img src="/billeder/allworks/workscircle2.jpg" alt="cirkel" />
+        <div class="overlay">"LifeCircle" Dark rose</div>
+      </div>
+      <div class="image-hover">
+        <img src="/billeder/allworks/workscircle3.jpg" alt="cirkel" />
+        <div class="overlay">"LifeCircle" Lavender</div>
+      </div>
+      <div class="image-hover">
+        <img src="/billeder/allworks/workscircle1.jpg" alt="Circle" />
+        <div class="overlay">"LifeCircle" Baby pink</div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="image-hover">
+        <img src="/billeder/allworks/worksmedia2.jpeg" alt="udstilling" />
+        <div class="overlay">"Mixed Media" & <br /> "Black Tusch On Paper"</div>
+      </div>
+      <div class="image-hover">
+        <img src="/billeder/allworks/worksinst.jpg" alt="udstilling" />
+        <div class="overlay">From the exhibition <br /> "Balance Me, Balance Us"</div>
+      </div>
+    </div>
+
     <div class="image-hover">
-        <img src="/billeder/allworks/worksmedia4.jpg" alt="bodymap">
+      <img src="/billeder/allworks/e1.jpeg" alt="udstilling" />
+      <div class="overlay">From the exhibition "Balance Me, Balance Us"</div>
+    </div>
+
+    <div class="grid2">
+      <div class="image-hover">
+        <img src="/billeder/allworks/worksmedia5.jpg" alt="bodymap" />
+        <div class="overlay">"Mixed Media"</div>
+      </div>
+      <div class="image-hover">
+        <img src="/billeder/allworks/worksmedia4.jpg" alt="bodymap" />
         <div class="overlay">"Female Bodymap"</div>
+      </div>
     </div>
-</div>
 
-<div class="image-hover">
-    <img src="/billeder/allworks/e2.jpeg" alt="udstilling">
-    <div class="overlay">From the exhibition "Balance Me, Balance Us"</div>
-</div>
-
-<div class="grid2">
     <div class="image-hover">
-        <img src="/billeder/allworks/installation1.jpeg" alt="bodymap">
-        <div class="overlay"> Installation "Circle Of Nature"</div>
+      <img src="/billeder/allworks/e2.jpeg" alt="udstilling" />
+      <div class="overlay">From the exhibition "Balance Me, Balance Us"</div>
     </div>
-    <div class="image-hover">
-        <img src="/billeder/allworks/workinst3.jpeg" alt="bodymap">
+
+    <div class="grid2">
+      <div class="image-hover">
+        <img src="/billeder/allworks/installation1.jpeg" alt="bodymap" />
         <div class="overlay">Installation "Circle Of Nature"</div>
+      </div>
+      <div class="image-hover">
+        <img src="/billeder/allworks/workinst3.jpeg" alt="bodymap" />
+        <div class="overlay">Installation "Circle Of Nature"</div>
+      </div>
     </div>
-</div>
+  </div>
+  <Footer />
 
-</Layout>
-<Footer />
-
-<style>
-  h1 {
-    padding-top: 6rem;
-    text-align: center;
-    padding-bottom: 32px;
-  }
-  h2 {
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    text-align: left;
-  }
-
-  .sektion_body {
-    margin: 2rem;
-    display: grid;
-    place-items: center;
-    text-align: center;
-  }
-
-  .sektion_body h2 {
-    justify-self: start; 
-    align-self: start; 
-    text-align: left; 
-  }
-  .grid2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 5px; 
-    padding-bottom:5px;
-    padding-top: 5px;
-
-}
-.image-container2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: auto auto; 
-    gap: 5px; 
-}
-
-.image-container2 > div:last-child {
-    grid-column: 1 / -1; 
-}
-/*HOVER EFFFEKT BILLEDER*/
-
-.image-hover {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
-
-.image-hover img {
-    width: 100%;
-    display: block; 
-    transition: transform 0.3s ease; 
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgb(242, 242, 242, 0.7); 
-    color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
-    font-size: 12px; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-.image-hover:hover .overlay {
-    opacity: 1;
-}
-
-  @media (min-width: 768px) {
-   .image-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 5px; 
-    padding-bottom:5px;
-
-   }
-     .image-container2 {
-        display: flex; 
-        justify-content: space-between; 
+  <style>
+    .sektion_body {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      display: grid;
+      place-items: center;
+      text-align: center;
     }
-    .image-container2 > div {
-        flex: 1; 
+
+    .sektion_body h2 {
+      justify-self: start;
+      align-self: start;
+      text-align: left;
     }
-  }
-  .overlay {
-    font-size: 24px;
-  }
-</style>
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+      margin-bottom: 4rem;
+      padding-top: 5px;
+    }
+    .image-container2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+      gap: 5px;
+    }
+
+    .image-container2 > div:last-child {
+      grid-column: 1 / -1;
+    }
+    /*HOVER EFFFEKT BILLEDER*/
+
+    .image-hover {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .image-hover img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(242, 242, 242, 0.7);
+      color: rgb(0, 0, 0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+    }
+
+    .image-hover:hover .overlay {
+      opacity: 1;
+    }
+
+    @media (min-width: 768px) {
+      .image-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        padding-bottom: 5px;
+      }
+      .image-container2 {
+        display: flex;
+        justify-content: space-between;
+      }
+      .image-container2 > div {
+        flex: 1;
+      }
+    }
+    .overlay {
+      font-size: 24px;
+    }
+  </style></Layout
+>
