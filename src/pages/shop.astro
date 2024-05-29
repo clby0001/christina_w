@@ -28,7 +28,7 @@ const last = data.slice(4);
       })
     }
   </section>
-  <Buttons variant="primary" size="all" className="see-more-buttonmobil">SEE MORE</Buttons>
+  <Buttons variant="more" size="all" className="see-more-buttonmobil">SEE MORE</Buttons>
   <section class="shop last hide grid">
     {
       last.map((shop, index) => {
@@ -66,11 +66,11 @@ const last = data.slice(4);
     document.querySelector(".last").classList.remove("hide");
 
     // Skjul "Se mere" knappen, når alle kortene er synlige
-    document.querySelector(".primary").classList.add("hide");
+    document.querySelector(".more").classList.add("hide");
   }
 
   // Bind funktionen til knappen
   document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".primary").addEventListener("click", showMoreProducts);
+    document.querySelector(".more").addEventListener("click", showMoreProducts);
   });
 </script>

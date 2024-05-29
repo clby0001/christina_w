@@ -1,5 +1,7 @@
 ---
 import "../css/style.css";
+import Buttons from "../components/Buttons.astro";
+
 const { data } = Astro.props;
 console.log(data);
 ---
@@ -10,6 +12,9 @@ console.log(data);
     <div class="text-container">
       <h2>{data.Name}</h2>
       <h2>DKK {data.Price},-</h2>
+    </div>
+    <div class="knap">
+      <Buttons variant="primary" size="shoppage">SEE PRODUCT</Buttons>
     </div>
   </a>
 </article>
@@ -45,5 +50,16 @@ console.log(data);
     font-size: 16px;
     color: #333;
     font-style: normal;
+  }
+
+  .knap {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .knap button {
+    margin-left: 0;
   }
 </style>

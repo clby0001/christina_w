@@ -24,6 +24,17 @@ const { variant, size } = Astro.props;
       color 0.3s;
   }
 
+  .more {
+    padding: 8px 32px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+
   .primary:hover {
     background-color: #e7d9d9;
     color: black;
@@ -34,6 +45,10 @@ const { variant, size } = Astro.props;
     margin-left: 160px;
     margin-right: 160px;
     align-self: center;
+  }
+
+  .shoppage {
+    font-size: 10px;
   }
 
   @media (min-width: 768px) {
