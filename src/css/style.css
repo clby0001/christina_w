@@ -31,8 +31,6 @@ body {
   /* FONT FAMILY */
   --overskrifter: "Karla", sans-serif;
   --brødtekst: Arial, Helvetica, sans-serif;
-
-  
 }
 
 body {
@@ -46,6 +44,7 @@ h4,
 h5,
 h6 {
   font-family: var(--overskrifter);
+  color: black;
 }
 
 h1 {
@@ -65,6 +64,7 @@ p {
   font-family: var(--brødtekst);
   font-size: var(--paragraph-mobile-font-size);
   line-height: 1.5;
+  color: #000;
 }
 
 @media (min-width: 768px) {

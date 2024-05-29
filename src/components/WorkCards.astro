@@ -3,28 +3,21 @@ import Buttons from "./Buttons.astro";
 const { data } = Astro.props;
 ---
 
-<article>
+<a class="container" href={data.href}>
   <div>
     <div class="tekst">
       <h3>{data.title}</h3>
       <p>{data.subtitles}</p>
       {data.lillebillede && <img class="lillebillede" src={data.lillebillede} alt="Lille billede" />}
-      {
-        data.button && (
-          <a class="knapforside" href="/about">
-            {data.button}
-          </a>
-        )
-      }
     </div>
   </div>
   <div class="bigImgContainer">
     <img src={data.cardImages} alt="Card billede" />
   </div>
-</article>
+</a>
 
 <style>
-  article {
+  .container {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -32,11 +25,11 @@ const { data } = Astro.props;
     margin-bottom: 4rem;
   }
 
-  article div {
+  .container div {
     justify-content: end;
   }
 
-  article img.stort-billede {
+  .container img.stort-billede {
     height: 600px;
     width: 50%;
     object-fit: cover;
@@ -101,15 +94,15 @@ const { data } = Astro.props;
       font-size: 24px;
     }
 
-    article {
+    .container {
       flex-direction: row;
     }
 
-    article:nth-child(odd) .bigImgContainer {
+    .container:nth-child(odd) .bigImgContainer {
       order: -1;
     }
 
-    article > div {
+    .container > div {
       width: 50%;
       margin-right: 20px;
       display: flex;
@@ -117,7 +110,7 @@ const { data } = Astro.props;
       justify-content: center;
     }
 
-    article:nth-child(even) div {
+    .container:nth-child(even) div {
       order: -1;
     }
 
