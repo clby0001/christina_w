@@ -3,8 +3,10 @@ import "../css/style.css";
 const { text, title, describtion, imageSrc } = Astro.props;
 ---
 
-<div class="component2">
-  <h2>{text}</h2>
+<div class="citat-container">
+  <div class="component2">
+    <h2>{text}</h2>
+  </div>
 </div>
 
 <style>
@@ -12,6 +14,26 @@ const { text, title, describtion, imageSrc } = Astro.props;
     font-size: 25px;
     text-align: left;
     justify-content: center;
-    margin: 60px ;
+    margin-top: 60px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .component2 {
+      width: 700px;
+    }
+    .component2 h2 {
+      font-size: 33px;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .citat-container {
+      width: 100wv;
+      display: flex;
+      justify-content: center;
+    }
   }
 </style>
